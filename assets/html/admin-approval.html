@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Phiếu Đăng Ký</title>
+</head>
+<body>
+    <h1>Quản Lý Phiếu Đăng Ký</h1>
+    <div id="pendingRequests"></div>
+    <style type="text/css">
+        .quaylai button{
+            width: 100px ;
+            height: 60px ;
+            margin-top: 10px;
+            background-color: #cf6363;
+        }
+    </style>
+    <div class = "quaylai">
+            <a href="./quanlihoso.html"><button>Quay lại</button></a>
+    </div>
+    <script>
+
+        const adminAccount = {
+            user_0: JSON.stringify({account: "cao", email: "cao@gamil.com" , password : "cao123456"})
+        }
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+        const pendingRequests = document.getElementById("pendingRequests");
+
+        function updateRequests() {
+            pendingRequests.innerHTML = '';
+            students.forEach((student, index) => {
+                if (student.status === "pending") {
+                    const studentDiv = document.createElement("div");
+                    studentDiv.innerHTML = `
+                        <p>Họ và tên: ${student.hoTen}</p>
+                        <p>Email: ${student.email}</p>
+                        <p>Số điện thoại: ${student.sdt}</p>
+                        <p>Số CMND/CCCD: ${student.cccd}</p>
+                        <p>Ngày sinh: ${student.ngaySinh}</p>
+                        <p>Giới tính: ${student.gioiTinh}</p>
+                        <p>Điểm lớp 10: ${student.diem10}</p>
+                        <p>Điểm lớp 11: ${student.diem11}</p>
+                        <p>Điểm lớp 12: ${student.diem12}</p>
+                        <button onclick="approveStudent(${index})">Chấp nhận</button>
+                        <button onclick="rejectStudent(${index})">Từ chối</button>
+                    `;
+                    pendingRequests.appendChild(studentDiv);
+                }
+            });
+        }
+
+        function approveStudent(index) {
+            students[index].status = "accepted";
+            localStorage.setItem("students", JSON.stringify(students));
+            updateRequests();
+            alert("Phiếu đã được chấp nhận.");
+        }
+
+        function rejectStudent(index) {
+            students[index].status = "rejected";
+            localStorage.setItem("students", JSON.stringify(students));
+            updateRequests();
+            alert("Phiếu đã bị từ chối.");
+        }
+
+        updateRequests();
+    </script>
+</body>
+</html>

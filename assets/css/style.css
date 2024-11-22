@@ -1,0 +1,324 @@
+:root {
+    --primary-color : #ff6b6b;
+    --secondary--color : #794afa; 
+    --secondary-dark-color : #453c5c ; 
+    --menu--color: #00368c;
+
+    --white-color: #ffffff;
+    --light-bg-color: #f2f3f5; 
+    --light-text-color :#7c899a; 
+    --border-color :#e5e8ec; 
+    --dark-color :#0a021c; 
+
+    --font-small:13px ; 
+    --font-smaller:11px ; 
+
+    --percent100: 100%; 
+    --percent50:50%; 
+
+    --fw3: 300; 
+    --fw5: 500;
+    --fw6: 600; 
+    --fw7: 700;
+    --fw8: 800; 
+
+    --trans-background-color: background-color .3s color .3s; 
+    --trans-background: backgound-color .3s; 
+    --trans-color :color .3s;
+
+
+
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Phần thông tin liên lạc và đăng nhập/đăng ký */
+#header_contact {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 5px 0;    
+}
+
+#header_contact .block_infor {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+#header_contact .block_infor a {
+    color: blue;
+    text-decoration: none;
+}
+
+#header_contact .block_login {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+}
+
+.block_login a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Phần logo trường, tên trường và slogan */
+#header_slogan {
+    /* width: 85%; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* background-color: #0e2D80; */
+    justify-content: space-around;
+    /* line-height: 100px; */
+    /* background-image: url('/assets/img/img_header/2.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_name img{
+    width: 100px;
+    height: 100px;
+}
+
+.header_name {
+    display: flex;
+    align-items:flex-start;    
+    margin: 10px 0; 
+    /* margin-right: 300px; */
+}
+
+.header_name .name_school h2 {
+    margin: 20px 10px;
+}
+
+.header_name .name_school h3 {
+    margin-left: 11px;
+}
+
+#header_slogan .title {
+    margin-right: 70px;
+    color: blue;
+}
+
+header {
+    /* background-image: url('/assets/img/img_header/images.jpg'); */
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Phần navigation */
+#header_nav .menu {
+    display: flex;
+    width: 80%;
+    list-style: none;
+    /* margin-left: 300px; */
+    margin: 0 auto;
+}
+.menu > li {
+    padding: 10px 10px;
+    margin-left: 70px;
+}
+
+/* Xử lí hover cho phần header */
+#header_contact .block_login a:hover,
+#header_contact .block_infor a:hover {
+    color: red;
+    /* opacity: 0.5; */
+    cursor: pointer;
+}
+
+/* .menu li:hover {
+    background-color: aqua;
+    cursor: pointer;
+
+} */
+
+   /* 01. header--------------
+    c. Header Menu , Departments Category
+    -------------- ------------*/
+    #header_nav li a{
+        display: block;
+        padding : 0.5em 1.5em;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    #header_nav li a::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px; /* Giúp thanh chạy hiệu ứng chuyển động*/
+        width: 0;
+        height: 3px; /* độ rộng thanh  */
+        background-color: var(--menu--color); /* màu của thanh  */
+        transition: width 0.3s ease-in-out;
+    }
+    #header_nav li a:hover::after{
+        width: 100%;
+    }
+    #header_nav ul{
+        padding-left: 6%;
+    }
+    #header_nav li{
+        position: relative;
+    }
+    
+    #header_nav ul.sub-menu{
+        position: absolute;
+        background-color: #eef3f9;
+        padding :0px 0px;
+        width: 200px;
+        display: none;
+        /* border-radius: 5px; */
+    }
+    #header_nav li:hover > ul.sub-menu{
+        display: block;
+        transition: var(--trans-background-color);
+    }
+    
+    #header_nav ul.sub-menu a{
+        padding: 8px 15px;
+        border-bottom: 2px solid #ffffff;
+        left: 0;
+    }
+    #header_nav ul.sub-menu li:hover a{
+        color :var(--light-bg-color);
+        background-color: var(--menu--color);
+        transition: 0.5s;
+    }
+    #header_nav ul.sub-menu li:last-child a{
+       border: none; 
+    }
+    
+    #header_nav ul.sub-menu ul.sub-menu{
+        left : 201px;
+        top: 0.2px; 
+        
+    }
+    
+    #header_nav ul.sub-menu ul.sub-menu li:hover > a {
+        background-color: initial; /* Giữ nguyên màu nền ban đầu */
+        color: initial; /* Giữ nguyên màu chữ ban đầu */
+    }
+    
+    footer{
+        width: 100% ;
+        background-color: #07184a;
+        height: 400px;
+        margin-top: 30px ;
+        padding: 0px 70px ;
+        padding-top: 57px;
+    
+    }
+    footer .top{
+        display: flex;
+        height: 300px;
+        justify-content: space-around;
+    
+    }
+    footer .box{
+        width: 480px;
+        color :#fff; 
+        text-align: center;
+    
+    }
+    footer .box .logo{
+        margin-bottom: 15px;
+    }
+    footer .box .logo p.p1{
+        margin-top: 5px ;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    footer .box .logo p.p2{
+        font-size: 13px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    footer .box .logo img{
+        width: 270px ;
+        height: 120px ;
+        box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+        /* border-radius: 15px ; */
+    }
+    .logo .inf{
+        width: 280px;
+        margin: 20px auto;
+        padding-left:20px ;
+    
+      
+    }
+    footer .box .logo .inf .item{
+        display: flex;
+        margin-top: 8px;
+    }
+    footer .box .logo .inf .item p {
+       margin-left: 8px;
+       font-size: 14px;
+    }
+    footer .box1{
+        width: 300px;   
+        text-align: left;
+        margin: 28px auto;
+    
+    }
+    footer .box1 .quick-menu{
+        margin-top: 20px ;
+    }
+    footer .box1 .quick-menu .item{
+        margin-left: 3px;
+        margin-bottom: 12px;
+        
+    }
+    footer .box1 h3{
+        font-size: 18px;
+        color:#ffffff9a;
+    }
+    footer .box1 .quick-menu .item a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    footer .box1 form input{
+        width: 294px ;
+        height: 42px;
+        background: transparent;
+        padding-left: 20px;
+        color: #fff;
+        margin-top: 30px ;
+    }
+    footer .box1 form button{
+        background: #362f2f;
+        box-shadow: 5px 5px 4px rgba(0,0,0.25);
+        width: 163px;
+        height: 38px;
+        margin-top: 29px ;
+        color:#fff;
+    }
+    footer .buttom hr{
+        color: #ffffffa3;
+    }
+    footer .buttom p{
+        color: #ffffffa3;
+        text-align: center;
+        margin-top: 8px;
+    }     
+    
+    

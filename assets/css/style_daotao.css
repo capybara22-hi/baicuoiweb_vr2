@@ -1,0 +1,208 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --dark-color: #000;
+    --white-color: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+
+/* html {
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+body {
+    position: relative;
+}
+
+/* .header {
+    position: absolute;
+    z-index: 1;
+} */
+
+#silder {
+    position: absolute;
+    top: 200px;
+}
+
+#slider img {
+    width: 100%;
+    height: 900px;
+    transition: transform 0.3s ease;
+}
+
+#content {
+    width: 65%;
+    margin: auto;
+}
+
+.block_content {
+    margin-top: 50px;
+}
+
+.block_content_introduce {
+    font-size: 20px;
+    margin-bottom: 50px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+#content .dao_tao {
+    display: flex;
+    margin: 40px 0;
+}
+
+.dao_tao:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.dao_tao .text {
+    margin-left: 30px;
+    position: relative;
+}
+
+.text h2 {
+    margin-bottom: 15px;
+}
+
+.dao_tao .text p {
+    opacity: 0.6;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.text .btn_xem_them {
+    position: absolute;
+    bottom: 0;
+    border: 2px solid blue;
+    padding: 5px 25px;
+    border-radius: 20px;
+}
+
+.text .btn_xem_them a {
+    text-decoration: none;
+    color: blue;
+}
+
+.text .btn_xem_them:hover {
+    border: 1px solid #ccc;
+}
+
+.text .btn_xem_them:hover a {
+    color: #ccc;
+}
+footer{
+    width: 100% ;
+    background-color: #07184a;
+    height: 400px;
+    margin-top: 30px ;
+    padding: 0px 70px ;
+    padding-top: 57px;
+
+}
+footer .top{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+
+}
+footer .box{
+    width: 480px;
+    color :#fff; 
+    text-align: center;
+
+}
+footer .box .logo{
+    margin-bottom: 15px;
+}
+footer .box .logo p.p1{
+    margin-top: 5px ;
+    font-size: 14px;
+    font-weight: bold;
+}
+footer .box .logo p.p2{
+    font-size: 13px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer .box .logo img{
+    width: 270px ;
+    height: 120px ;
+    box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+    /* border-radius: 15px ; */
+}
+.logo .inf{
+    width: 280px;
+    margin: 20px auto;
+    padding-left:20px ;
+
+  
+}
+footer .box .logo .inf .item{
+    display: flex;
+    margin-top: 8px;
+}
+footer .box .logo .inf .item p {
+   margin-left: 8px;
+   font-size: 14px;
+}
+footer .box1{
+    width: 300px;   
+    text-align: left;
+    margin: 28px auto;
+
+}
+footer .box1 .quick-menu{
+    margin-top: 20px ;
+}
+footer .box1 .quick-menu .item{
+    margin-left: 3px;
+    margin-bottom: 12px;
+    
+}
+footer .box1 h3{
+    font-size: 18px;
+    color:#ffffff9a;
+}
+footer .box1 .quick-menu .item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+footer .box1 form input{
+    width: 294px ;
+    
+    height: 42px;
+    background: transparent;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 30px ;
+}
+footer .box1 form button{
+    background: #362f2f;
+    box-shadow: 5px 5px 4px rgba(0,0,0.25);
+    width: 163px;
+    height: 38px;
+    margin-top: 29px ;
+    color:#fff;
+}
+footer .buttom hr{
+    color: #ffffffa3;
+}
+footer .buttom p{
+    color: #ffffffa3;
+    text-align: center;
+    margin-top: 8px;
+} 

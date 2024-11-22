@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --primary-color : #ff6b6b;
+    --secondary--color : #794afa; 
+    --secondary-dark-color : #453c5c ; 
+    --menu--color: #00368c;
+
+    --white-color: #ffffff;
+    --light-bg-color: #f2f3f5; 
+    --light-text-color :#7c899a; 
+    --border-color :#e5e8ec; 
+    --dark-color :#0a021c; 
+    --red-color: #ff0202;
+
+    --font-small:13px ; 
+    --font-smaller:11px ; 
+
+    --percent100: 100%; 
+    --percent50:50%; 
+
+    --fw3: 300; 
+    --fw5: 500;
+    --fw6: 600; 
+    --fw7: 700;
+    --fw8: 800; 
+
+    --trans-background-color: background-color .3s color .3s; 
+    --trans-background: backgound-color .3s; 
+    --trans-color :color .3s;
+
+
+
+}
+
+
+*{
+    margin:0;
+    padding:0;
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+/* body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+} */
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+  
+    
+/* ////////////////////////////////////////////////// */
+main { 
+    width: 85%;
+    margin:  auto; 
+    /* background-color: aquamarine; */
+    padding: 15px;
+}
+
+
+.text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%; /* Chiều rộng của khung chứa */
+    position: relative;
+    height: 45px; /* Chiều cao của khung chứa */
+    background-color: var(--menu--color);
+    line-height: 45px;
+    padding-right:10px;
+  }
+
+.text-running {
+    width: 100%;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 18px;
+    color: #ffffff;
+    animation: move-left 20s linear infinite;
+        /* infinite: Chỉ định rằng animation sẽ lặp lại vô hạn lần sau khi hoàn thành. */
+        /* : Áp dụng hiệu ứng move-left cho phần tử, kéo dài 5 giây và lặp lại vô hạn lần. */
+}
+.text-running i{
+    margin-left:10px ;
+    margin-right: 10px;
+}
+.text-running a{
+    color: var(--primary-color);
+}
+  @keyframes move-left {
+    from {
+      transform: translateX(100%);
+    }
+    /* Ở trạng thái bắt đầu, di chuyển phần tử sang phải 100%. */
+    to {
+      transform: translateX(-100%);
+    }
+    /* Ở trạng thái kết thúc, di chuyển phần tử sang trái 100%. */
+  }
+
+main #main{
+    margin-top: 50px;
+    display: flex;
+}
+
+main .left{
+    width: 55%;
+    padding: 10px;
+    padding-right: 20px;
+    text-align: justify;
+    /* background-color: #55beff; */
+}
+
+
+.left .tieude{
+    width: 100%;
+    margin: 10px  auto;
+    background-color: #ffffff;
+}
+.left .tieudeic{
+    display: flex;
+    margin-bottom: 30px;
+    color: #89878d;
+    margin-left: 10px;
+}
+
+.left .tieudeic i{
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.left .tieude h2{
+    color: #302e2e;
+    margin-left: 10px;
+}
+#khoilon p.tieude{
+    font-weight: bold;
+    font-size: 20px;
+    color: #37455c;
+} 
+#khoilon p.vanban{
+    font-size: 16px;
+    margin-bottom: 10px;
+
+
+} 
+#khoilon p.vanban.i1 {
+    display: inline;
+
+ 
+
+}
+#khoilon p.vanban i{
+    font-size: 16px;
+    margin-bottom: 10px;
+
+
+} 
+.chuthich {
+    display: inline;
+    color: #009cfd;
+    font-weight: 600;
+}
+.chuthich:hover {
+    display: inline;
+    font-style: italic;
+    color: #1c1d1d;
+    font-weight: 600;
+}
+
+
+
+#khoilon p.vanban i{
+    font-size: 10px;
+    margin-right: 10px;
+} 
+p.vanban span.nghiengchu{
+    font-style: italic;
+}
+
+
+
+
+main .right{
+    width: 24%;
+    height: 60%;
+    padding: 18px;
+    text-align: justify;
+    margin-right: 20px;
+    background-color: #d6d6d642;
+    /* background-color: #00368c; */
+}
+
+.right .tieudeic{
+    margin-bottom: 10px;
+    display: flex;
+    font-size: 13px;
+    color: #00368c;
+}
+.right .tieudeic i{
+    margin-top:2px;
+    font-size: 20px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.right p{
+    margin-top: 15px;
+    font-size: 17px;
+}
+.right p:hover{
+    font-style: italic;
+    transition: all 0.25s;
+}
+.right p.ychinh{
+    margin-top: 10px;
+    color:rgba(16, 15, 15, 0.859);
+  
+}
+.right .tieude h2{
+    font-size: 18px;
+
+
+}
+.right .tieude h2.duoi{
+    font-size: 18px;
+    margin-top: 40px;
+
+}
+.right .yphu{
+    color:rgba(56, 48, 48, 0.805);
+    margin-left: 15px;
+    
+}
+.left-right{
+    margin-top: 80px;
+}
+.left-right .khoi{
+    width: 250px;
+    height: 300px;
+    position: relative;
+    background-color:#b7b5ba ;
+}
+.video-container video{
+    width: 100%;
+    border: 10px solid #b7b5ba ;
+    height: 200px;
+    object-fit: cover ;
+
+}
+.video-container h3{
+    position: absolute;
+    top:38%;
+    left: 4%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 230px;
+    height: 45px;
+    line-height: 45px;
+    background: #d6cfcfac;
+    /* padding : 1rem 2rem;  */
+    text-align: center;
+    mix-blend-mode: screen;
+}
+.left-right .khoi .buttom{
+    display: flex;
+    width: 220px ;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color:white;
+    margin: 20px auto;
+}
+
+
+footer{
+    width: 100% ;
+    background-color: #07184a;
+    height: 400px;
+    margin-top: 30px ;
+    padding: 0px 70px ;
+    padding-top: 57px;
+
+}
+footer .top{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+
+}
+footer .box{
+    width: 480px;
+    color :#fff; 
+    text-align: center;
+
+}
+footer .box .logo{
+    margin-bottom: 15px;
+}
+footer .box .logo p.p1{
+    margin-top: 5px ;
+    font-size: 14px;
+    font-weight: bold;
+}
+footer .box .logo p.p2{
+    font-size: 13px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer .box .logo img{
+    width: 270px ;
+    height: 120px ;
+    box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+    /* border-radius: 15px ; */
+}
+.logo .inf{
+    width: 280px;
+    margin: 20px auto;
+    padding-left:20px ;
+
+  
+}
+footer .box .logo .inf .item{
+    display: flex;
+    margin-top: 8px;
+}
+footer .box .logo .inf .item p {
+   margin-left: 8px;
+   font-size: 14px;
+}
+footer .box1{
+    width: 300px;   
+    text-align: left;
+    margin: 28px auto;
+
+}
+footer .box1 .quick-menu{
+    margin-top: 20px ;
+}
+footer .box1 .quick-menu .item{
+    margin-left: 3px;
+    margin-bottom: 12px;
+    
+}
+footer .box1 h3{
+    font-size: 18px;
+    color:#ffffff9a;
+}
+footer .box1 .quick-menu .item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+footer .box1 form input{
+    width: 294px ;
+    
+    height: 42px;
+    background: transparent;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 30px ;
+}
+footer .box1 form button{
+    background: #362f2f;
+    box-shadow: 5px 5px 4px rgba(0,0,0.25);
+    width: 163px;
+    height: 38px;
+    margin-top: 29px ;
+    color:#fff;
+}
+footer .buttom hr{
+    color: #ffffffa3;
+}
+footer .buttom p{
+    color: #ffffffa3;
+    text-align: center;
+    margin-top: 8px;
+} 

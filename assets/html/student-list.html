@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sinh Viên</title>
+    <style type="text/css">
+        .quaylai button {
+            width: 100px;
+            height: 60px;
+            margin-top: 10px;
+            background-color: #cf6363;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+        }
+
+        .khoi1 {
+            width: 1200px;
+            padding: 30px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 0.75rem;
+            border: 1px solid #1e3a8a;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: #ffffff;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="khoi1">
+        <h1>Danh Sách Sinh Viên Đang Chờ Xét Duyệt</h1>
+        <table id="pendingTable">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số CMND/CCCD</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Điểm lớp 10</th>
+                    <th>Điểm lớp 11</th>
+                    <th>Điểm lớp 12</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody id="pendingBody"></tbody>
+        </table>
+    </div>
+    <div class="khoi1">
+        <h1>Danh Sách Sinh Viên Đã Được Chấp Nhận</h1>
+        <table id="infoTable">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số CMND/CCCD</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Điểm lớp 10</th>
+                    <th>Điểm lớp 11</th>
+                    <th>Điểm lớp 12</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <div class="quaylai">
+            <a href="./quanlihoso.html"><button>Quay lại</button></a>
+        </div>
+    </div>
+    <script>
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+        const tableBody = document.getElementById("tableBody");
+        const pendingBody = document.getElementById("pendingBody");
+
+        // Hiển thị danh sách đang chờ duyệt
+        function displayPendingStudents() {
+            pendingBody.innerHTML = ""; // Xóa nội dung cũ
+            students.forEach((student, index) => {
+                if (student.status === "pending") {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${student.hoTen}</td>
+                        <td>${student.email}</td>
+                        <td>${student.sdt}</td>
+                        <td>${student.cccd}</td>
+                        <td>${student.ngaySinh}</td>
+                        <td>${student.gioiTinh}</td>
+                        <td>${student.diem10}</td>
+                        <td>${student.diem11}</td>
+                        <td>${student.diem12}</td>
+                        <td>Đang chờ xét duyệt</td>
+                    `;
+                    pendingBody.appendChild(row);
+                }
+            });
+        }
+
+        // Hiển thị danh sách đã được chấp nhận
+        function displayAcceptedStudents() {
+            tableBody.innerHTML = ""; // Xóa nội dung cũ
+            students.forEach((student, index) => {
+                if (student.status === "accepted") {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${student.hoTen}</td>
+                        <td>${student.email}</td>
+                        <td>${student.sdt}</td>
+                        <td>${student.cccd}</td>
+                        <td>${student.ngaySinh}</td>
+                        <td>${student.gioiTinh}</td>
+                        <td>${student.diem10}</td>
+                        <td>${student.diem11}</td>
+                        <td>${student.diem12}</td>
+                        <td><button onclick="deleteStudent(${index})">Xóa</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            });
+        }
+
+        // Xóa sinh viên đã chấp nhận
+        function deleteStudent(index) {
+            students.splice(index, 1); // Xóa sinh viên khỏi mảng
+            localStorage.setItem("students", JSON.stringify(students)); // Cập nhật localStorage
+            displayAcceptedStudents(); // Hiển thị lại danh sách
+            alert("Đã xóa thông tin sinh viên");
+        }
+
+        // Gọi các hàm hiển thị
+        displayPendingStudents();
+        displayAcceptedStudents();
+    </script>
+</body>
+</html>

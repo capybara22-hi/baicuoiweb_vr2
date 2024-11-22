@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    /* background-image: url('/assets/img/img_header/images.jpg'); */
+    background-color: rgb(175, 253, 253, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Phần thông tin liên lạc và đăng nhập/đăng ký */
+#header_contact {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 5px 0;    
+}
+
+#header_contact .block_infor {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+}
+
+#header_contact .block_infor a {
+    color: blue;
+    text-decoration: none;
+}
+
+#header_contact .block_login {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+}
+
+.block_login a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Phần logo trường, tên trường và slogan */
+#header_slogan {
+    /* width: 85%; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* background-color: #0e2D80; */
+    justify-content: space-around;
+    /* line-height: 100px; */
+    /* background-image: url('/assets/img/img_header/2.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header_name img{
+    width: 100px;
+    height: 100px;
+}
+
+.header_name {
+    display: flex;
+    align-items:flex-start;    
+    margin: 10px 0; 
+    /* margin-right: 300px; */
+}
+
+.header_name .name_school h2 {
+    margin: 20px 10px;
+}
+
+.header_name .name_school h3 {
+    margin-left: 11px;
+}
+
+#header_slogan .title {
+    margin-right: 70px;
+    color: blue;
+}
+
+/* Phần navigation */
+#header_nav .menu {
+    display: flex;
+    width: 70%;
+    list-style: none;
+    margin-left: 300px;
+}
+.menu > li {
+    padding: 10px 40px;
+    /* margin-left: 70px; */
+    position: relative;
+}
+
+.menu li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 100%;
+    background-color: aqua;
+    width: 0;
+    z-index: -1;
+    transition: width 0.5s ease-in;
+}
+
+.menu li:hover:before {
+    width: 100%;
+}
+
+.arrow {
+    color: red;
+    font-size: 13px;
+    position: absolute;
+    right: 15px;
+    line-height: 24px;
+}
+
+/* Xử lí hover cho phần header */
+#header_contact .block_login a:hover,
+#header_contact .block_infor a:hover {
+    color: red;
+    /* opacity: 0.5; */
+    cursor: pointer;
+}
+
+/* .menu > li:hover {
+    background-color: aqua;
+    cursor: pointer; */
+    /* opacity: 0.5; */
+/* } */
+
+
+/* Phần menu đa cấp */
+.menu_1 {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    background-color: #fff;  
+    width: 200px;
+    left: 0;
+    /* box-shadow: 0 0 5px rgb(0, 0, 0, 0.3); */
+    border: 1px solid #ccc;
+    display: none;
+}
+
+/* Tạo hiệu ứng ở thanh bên dưới khi di chuột vào */
+#header_nav li a {
+    position: relative;
+    text-decoration: none;
+}
+
+#header_nav li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Giúp thanh chạy hiệu ứng chuyển động*/
+    width: 0;
+    height: 3px; /* độ rộng thanh  */
+    background-color: blue; /* màu của thanh  */
+    transition: width 0.3s ease-in-out;
+}
+
+#header_nav li a:hover::after{
+    width: 100%;
+}
+
+
+.menu_1-list {
+    position: relative;
+}
+
+.menu_1 li {
+    padding: 13px;
+}
+
+
+.menu_1  li:hover {
+    background-color: #eef3f9;
+}
+
+.menu_2 {
+    list-style: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 250px;
+    background-color: #fff;
+    /* box-shadow: 0 0 5px rgb(0, 0, 0, 0.3); */
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.menu_1 li:hover .hover_1,
+.menu_1 li:hover .hover_2,
+.menu li:hover .menu_1 {
+    display: block;
+}
+

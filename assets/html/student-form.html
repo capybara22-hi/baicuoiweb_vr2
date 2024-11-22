@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Đăng Ký Tuyển Sinh</title>
+    <style>
+        .quaylai {
+            width: 100px;
+            height: 60px;
+            background-color: #fdfcfc;
+            /* border: 2px solid #000; */
+        }
+        .quaylai p{
+           padding-top: 20px;
+        }
+        a{
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        #khoi {
+            margin: 40px auto;
+            width: 600px;
+            background-color: #d5d7db;
+            padding: 10px;
+        }
+        #khoi h1,h3 {
+            text-align: center;
+        }
+
+        #khoi h3 {
+            margin-top: -20px;
+        }
+        .ko {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .v {
+            width: 480px;
+            /* height: 640px; */
+            background-color: #d5d7db;
+            
+            
+        }
+        fieldset{
+            width: 420px;
+            height: 220px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            background-color: #d5d7db;
+            margin:20px auto;
+        }
+        fieldset#bang2{
+            width: 420px;
+            height: 170px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            background-color: #d5d7db;
+            margin:20px auto;
+        }
+
+        fieldset label {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        input , select {
+            /* width:170px; */
+        }
+        fieldset .khoicon{
+            display: flex; 
+            margin-bottom: 10px;
+            
+        }
+
+
+        fieldset .khoicon .khoicon2{
+           margin-left: 20px;
+            
+        }
+        fieldset .khoicon .khoicon2.gioitinh{
+           margin-left: 70px;
+            
+        }
+        fieldset .khoicon .khoicon2.noisinh{
+           margin-left: 75px;
+            
+        }
+        button {
+            width: 100px;
+            height: 60px;
+            margin-top: 10px;
+            background-color: #cf6363;
+        }
+        .button {
+            display: flex;
+            gap: 200px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="khoi">
+    <div class="khoitren">
+        <div class="left">
+            <h1>Phiếu Đăng Ký Tuyển Sinh</h1>
+            <h3>Trường Đại học sư phạm Hà Nội</h3>
+        </div>
+        <div class="right">
+            <div class="logo">
+                <!-- <img src="" alt=""> -->
+            </div>
+        </div>
+    </div>
+    <form id="studentForm">
+        <div class="ko">
+            <div class="v">
+                <fieldset id = "bang1">
+                    <legend>Thông tin cá nhân</legend>
+                    <div class = "khoicon">     
+                        <div class = "khoicon2"> 
+                            <label for="hoTen">Họ và tên: </label>
+                            <input type="text" id="hoTen" required>
+                        </div>
+                        <div class = "khoicon2"> 
+                            <label for="email">Email: </label>
+                            <input type="email" id="email" required>
+                        </div>
+                       
+                    </div>
+                    <div class = "khoicon">     
+                        <div class = "khoicon2"> 
+                            <label for="sdt">Số điện thoại: </label>
+                            <input type="text" id="sdt" required>
+                        </div>
+                        <div class = "khoicon2"> 
+                            <label for="cccd">Số CMND/CCCD: </label>
+                            <input type="text" id="cccd" required>
+                        </div>
+                       
+                    </div>
+                    <div class = "khoicon">     
+                        <div class = "khoicon2"> 
+                            <label for="ngaySinh">Ngày sinh:
+                            </label>
+                            <input type="date" id="ngaySinh" required>
+                        </div>
+                        <div class = "khoicon2 noisinh"> 
+                            <label for  = "noiSinh">Nơi sinh: </label>
+                            <select id="noiSinh">
+                                <option value="">Chọn</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="TP Hồ Chí Minh">TP Hồ Chí Minh</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class = "khoicon">     
+                        <div class = "khoicon2 gioitinh"> 
+                            <br>
+                            <label >Giới tính:
+                                <input type="radio" name="gioiTinh" value="Nam" required> Nam
+                                <input type="radio" name="gioiTinh" value="Nữ"> Nữ
+                            </label>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id = "bang2">
+                    <legend>Thông tin học tập</legend>
+                    <label for="truong">Trường THPT: <input type="text" id = "truong" required></label><br>
+                    <label for="diem10">Điểm trung bình lớp 10: <input type="number" id="diem10" min="0" max="10"  step="0.01" required></label><br>
+                    <label for="diem11">Điểm trung bình lớp 11: <input type="number" id="diem11" min="0" max="10" step = "0.01" required></label><br>
+                    <label for="diem12">Điểm trung bình lớp 12: <input type="number" id="diem12" min="0" max="10" step = "0.01" required></label><br>
+                    
+                </fieldset>
+                
+            </div>
+            
+               
+            
+        </div>
+        <div class = "button ">
+            <button type="submit">Gửi phiếu</button>
+            <a href="./quanlihoso.html"><div class="quaylai">
+                <p>Quay lại</p>
+            </div></a>
+        </div>
+        
+    </form>
+   
+</div>
+
+<script>
+    document.getElementById("studentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        const hoTen = document.getElementById("hoTen").value;
+        const email = document.getElementById("email").value;
+        const sdt = document.getElementById("sdt").value;
+        const cccd = document.getElementById("cccd").value;
+        const ngaySinh = document.getElementById("ngaySinh").value;
+        const gioiTinh = document.querySelector('input[name="gioiTinh"]:checked').value;
+        const diem10 = document.getElementById("diem10").value;
+        const diem11 = document.getElementById("diem11").value;
+        const diem12 = document.getElementById("diem12").value;
+
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+        
+        students.push({
+            hoTen,
+            email,
+            sdt,
+            cccd,
+            ngaySinh,
+            gioiTinh,
+            diem10,
+            diem11,
+            diem12,
+            status: "pending"
+        });
+        
+        localStorage.setItem("students", JSON.stringify(students));
+        alert("Đã gửi phiếu đăng ký thành công!");
+        e.target.reset();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --primary-color : #ff6b6b;
+    --secondary--color : #794afa; 
+    --secondary-dark-color : #453c5c ; 
+    --menu--color: #00368c;
+
+    --white-color: #ffffff;
+    --light-bg-color: #f2f3f5; 
+    --light-text-color :#7c899a; 
+    --border-color :#e5e8ec; 
+    --dark-color :#0a021c; 
+    --blue-color:#2874d8 ; 
+
+    --font-small:13px ; 
+    --font-smaller:11px ; 
+
+    --percent100: 100%; 
+    --percent50:50%; 
+
+    --fw3: 300; 
+    --fw5: 500;
+    --fw6: 600; 
+    --fw7: 700;
+    --fw8: 800; 
+
+    --trans-background-color: background-color .3s color .3s; 
+    --trans-background: backgound-color .3s; 
+    --trans-color :color .3s;
+
+
+
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    
+} */
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    
+    
+/* ////////////////////////////////////////////////// */
+main { 
+    width: 85%;
+    margin: 0px auto; 
+    padding: 15px;
+}
+
+main .background-main-top{
+    position: relative;
+}
+main .background-main-top img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* sẽ tự động cắt phần thừa của ảnh mà không làm biến dạng, đảm bảo ảnh vừa với khung chứa */
+    object-position: center center; /* Dịch ảnh lên trên */
+    z-index: 1;
+}
+
+main .back{
+    position: absolute;
+    width: 280px;
+    height: 80px;
+    background-color: #e5e8ec;
+    top: 59%;
+    left: 20%;
+    border-top: 10px solid #00368c ;
+} 
+main .back p{
+   font-size: 27px;
+   /* font-weight: bold; */
+   line-height: 70px;
+   text-align: center;
+   color: var(--secondary-dark-color);
+} 
+main .gioithieuTieude{
+    display: flex;
+}
+.gioithieuTieude .left{
+    width: 50%;
+    font-size: 30px;
+    padding: 40px 70px ;
+    line-height: 100px;
+    color: var(--menu--color);
+}
+.gioithieuTieude .right{
+    width: 50%;
+    font-size: 18px;
+    padding: 20px 20px ;
+}
+
+.diem .item h3.os{
+    font-size: 25px;
+    text-align: center;
+    color: #d25931;
+}
+.diem .item h3.os a{
+    color: var(--blue-color);
+}
+
+main .tieude{
+    width: 100%;
+    margin: 10px  auto;
+    background-color: #ffffff;
+}
+.tieude h2{
+    color: #d25931;
+    text-align: center;
+}
+main .diem{
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding-top: 10px ;
+}
+.diem .khoi{
+    width: 100%;
+    margin-top: 50px;
+    background-color: #794afa;
+
+
+}
+.diem .khoi .item{
+    width: 100%;
+    display: flex;
+    height: 550px;
+    background-color: #e5e8ec;
+
+}
+.diem .khoi .item .icon{
+    width: 50%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; 
+    color: var(--light-text-color);
+    
+
+
+}
+.diem .khoi .item .icon .khoilon{
+    width: 350px;
+
+}
+.diem .khoi .item .icon .khoilon h3{
+    font-size: 24px;
+    width: 420px;
+}
+.diem .khoi .item .icon .khoilon h3 span{
+    color:var(--blue-color);
+}
+
+.diem .khoi .item .icon .khoi1 li{
+    margin-top: 6px;
+    font-size: 8px;
+
+    
+}
+.diem .khoi .item .icon .khoi1 li i{    
+    font-size: 8px;
+    margin-right: 10px;
+
+
+    
+}
+.diem .khoi .item .icon .khoi1 li a{
+    font-size: 16px;
+    color: var(--light-text-color);
+    border-bottom:2px dotted var(--light-text-color) ;
+}
+.diem .khoi .item .icon .khoi1 li a:hover{
+    font-style: italic;
+    color: var(--dark-color);
+}
+.diem .khoi .item .icon .khoilon .foot a{
+
+    margin-top: 10px;
+    display: flex;
+    font-size: 22px;
+    color: var(--light-text-color);
+
+
+}
+.diem .khoi .item .icon .khoilon .foot i{
+    padding-top: 4px;
+    margin-left: 10px;
+
+
+}
+
+.diem .khoi .item .icon ul{
+   width: 350px;
+   /* height: 200px; */
+ 
+
+}
+
+.diem .khoi .item .ican{
+    width: 50%;
+    background-color: #2874d8;
+}
+/* .diem .khoi .item .ican img{
+   
+    background-color: #f0f0f0;
+   
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.ican.show img {
+    opacity: 1;
+    transform: translateY(0);
+} */
+.ican img {
+    display: flex;
+    width: 80%;
+    margin: 6% auto;
+    border-radius: 10px;
+    opacity: 0;  /* Đặt độ mờ (opacity) của phần tử là 0,  */
+    transform: translateY(20px); /* Dịch chuyển phần tử xuống dưới 20px theo trục Y so với vị trí gốc của nó. */
+    transition: opacity 2s ease, transform 0.6s ease; /* Định nghĩa hiệu ứng chuyển đổi (transition) cho hai thuộc tính opacity và transform, với thời gian 2 giây (2s) và tốc độ thay đổi là ease (mượt mà). */
+
+}
+
+.ican.show img {
+    opacity: 1;
+    transform: translateY(0);
+}
+.ican img:hover  {
+    transform: scale(1.1); /* Phóng to ảnh lên 120% */
+}
+
+main .main-bottom{
+    width: 100%;
+
+    margin-top: 40px;
+
+}
+main .main-bottom .khampha{ 
+    text-align: center;
+    font-size: 25px;
+    padding-top :20px ;
+    color: var(--secondary-dark-color);
+    
+
+}
+
+
+main .main-bottom .khoilon{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+
+}
+.khampha .underline {
+    border-radius: 5px;
+    width: 150px; /* Chiều dài của đường gạch */
+    height: 5px; /* Độ dày của đường gạch */
+    background-color: var(--secondary-dark-color); /* Màu sắc của đường gạch */
+    margin: 5px auto; /* Canh giữa đường gạch */
+}
+main .main-bottom .khoilon .khoinho{
+    margin-right:5%;
+
+}
+
+main .main-bottom .khoilon .khoinho .img img{
+    width: 600px;
+    height: 400px;
+
+
+}
+main .main-bottom .khoilon .khoinho .doanvan{
+    width: 600px;
+    height: 200px;
+    background-color: var(--light-bg-color);
+    margin-top: -10px;
+    padding-left: 30px ;
+
+}
+
+main .main-bottom .khoilon .khoinho .doanvan .i1{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    color: var(--menu--color);
+
+}
+main .main-bottom .khoilon .khoinho .doanvan .i2{
+    padding-top: 20px;
+    width: 520px;
+
+}
+main .main-bottom .khoilon .khoinho .doanvan .i3 a{
+    margin-top: 15px;
+    display:flex;
+    font-size: 25px;
+    color: var(--blue-color);
+
+}
+.doanvan .i3 a i{
+    padding-left: 15px;
+    padding-top: 4px;
+}
+footer{
+    width: 100% ;
+    background-color: #07184a;
+    height: 400px;
+    margin-top: 30px ;
+    padding: 0px 70px ;
+    padding-top: 57px;
+
+
+}
+footer .top{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+
+}
+footer .box{
+    width: 480px;
+    color :#fff; 
+    text-align: center;
+
+}
+footer .box .logo{
+    margin-bottom: 15px;
+}
+footer .box .logo p.p1{
+    margin-top: 5px ;
+    font-size: 14px;
+    font-weight: bold;
+}
+footer .box .logo p.p2{
+    font-size: 13px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer .box .logo img{
+    width: 270px ;
+    height: 120px ;
+    box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+    /* border-radius: 15px ; */
+}
+.logo .inf{
+    width: 280px;
+    margin: 20px auto;
+    padding-left:20px ;
+
+  
+}
+footer .box .logo .inf .item{
+    display: flex;
+    margin-top: 8px;
+}
+footer .box .logo .inf .item p {
+   margin-left: 8px;
+   font-size: 14px;
+}
+footer .box1{
+    width: 300px;   
+    text-align: left;
+    margin: 28px auto;
+
+}
+footer .box1 .quick-menu{
+    margin-top: 20px ;
+}
+footer .box1 .quick-menu .item{
+    margin-left: 3px;
+    margin-bottom: 12px;
+    
+}
+footer .box1 h3{
+    font-size: 18px;
+    color:#ffffff9a;
+}
+footer .box1 .quick-menu .item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+footer .box1 form input{
+    width: 294px ;
+    height: 42px;
+    background: transparent;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 30px ;
+}
+footer .box1 form button{
+    background: #362f2f;
+    box-shadow: 5px 5px 4px rgba(0,0,0.25);
+    width: 163px;
+    height: 38px;
+    margin-top: 29px ;
+    color:#fff;
+}
+footer .buttom hr{
+    color: #ffffffa3;
+}
+footer .buttom p{
+    color: #ffffffa3;
+    text-align: center;
+    margin-top: 8px;
+} 

@@ -1,0 +1,301 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    margin: auto;
+    width: 1000px;
+    /* height: 900px; */
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+/* CSS tin tuyển sinh */
+.tintuc_tuyensinh h2 {
+    margin: 20px 0;
+    font-size: 30px;
+}
+
+.view_all {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view_all a {
+    text-decoration: none;
+    /* color: #000; */
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.view_all a:hover {
+    color: #fff;
+    background-color: rgb(114, 114, 222);
+    border: 1px solid rgb(114, 114, 222);
+}
+
+/* CSS thông tin nổi bật */
+.thongtin_noibat {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.thong_ke {
+    display: flex;
+    /* height: 50px; */
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.block1, .block2 {
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    padding: 20px;
+    background-color: #aed6f1;
+    /* color: #fff; */
+}
+
+.list_target {
+    padding: 20px;
+    background-color: #f9ebea;
+    font-size: 17px;
+    font-style: italic;
+    margin: auto;
+    width: 850px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.list {
+    margin: auto;
+    width: 750px;
+}
+
+.list li {
+    list-style:outside;
+    padding: 10px;
+}
+
+.icon_check {
+    font-size: 16px;
+    color: red;
+}
+
+.mo_ta .content {
+    margin: 25px 30px;
+}
+
+/* CSS chương trình đào tạo */
+
+.chuongtrinh_daotao {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.daotao {
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+}
+
+.daotao  h3 {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #aed6f1;
+}
+
+.daotao p {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.daotao p a {
+    text-decoration: none;
+    color: #000;
+}
+
+.list_daotao {
+    padding: 0 15px;
+}
+
+.list_daotao li {
+    list-style: none;
+    padding: 5px;
+}
+
+.list_daotao a {
+    text-decoration: none;
+}
+
+.daotao a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.daotao_nghiepvu {
+    display: flex;
+    width: 900px;
+    margin: auto;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.daotao_nghiepvu img {
+    height: 190px;
+}
+
+.daotao_content {
+    margin-left: 15px;
+
+}
+
+.daotao_content p {
+    text-align: justify;
+}
+
+/* CSS đăng kí tuyển sinh */
+.dangki_tuyensinh {
+    margin-top: 60px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.dangki_tuyensinh h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.dangki_tuyensinh a {
+    padding: 10px 20px;
+    background-color: red;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.button_dangki {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.button_dangki a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+
+footer{
+    width: 100% ;
+    background-color: #07184a;
+    height: 400px;
+    margin-top: 30px ;
+    padding: 0px 70px ;
+    padding-top: 57px;
+
+}
+footer .top{
+    display: flex;
+    height: 300px;
+    justify-content: space-around;
+
+}
+footer .box{
+    width: 480px;
+    color :#fff; 
+    text-align: center;
+}
+footer .box .logo{
+    margin-bottom: 15px;
+}
+footer .box .logo p.p1{
+    margin-top: 5px ;
+    font-size: 14px;
+    font-weight: bold;
+}
+footer .box .logo p.p2{
+    font-size: 13px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer .box .logo img{
+    width: 270px ;
+    height: 120px ;
+    box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+    /* border-radius: 15px ; */
+}
+.logo .inf{
+    width: 280px;
+    margin: 20px auto;
+    padding-left:20px ;
+
+  
+}
+footer .box .logo .inf .item{
+    display: flex;
+    margin-top: 8px;
+}
+footer .box .logo .inf .item p {
+   margin-left: 8px;
+   font-size: 14px;
+}
+footer .box1{
+    width: 300px;   
+    text-align: left;
+    margin: 28px auto;
+
+}
+footer .box1 .quick-menu{
+    margin-top: 20px ;
+}
+footer .box1 .quick-menu .item{
+    margin-left: 3px;
+    margin-bottom: 12px;
+    
+}
+footer .box1 h3{
+    font-size: 18px;
+    color:#ffffff9a;
+}
+footer .box1 .quick-menu .item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+footer .box1 form input{
+    width: 294px ;
+    
+    height: 42px;
+    background: transparent;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 30px ;
+}
+footer .box1 form button{
+    background: #362f2f;
+    box-shadow: 5px 5px 4px rgba(0,0,0.25);
+    width: 163px;
+    height: 38px;
+    margin-top: 29px ;
+    color:#fff;
+}
+footer .buttom hr{
+    color: #ffffffa3;
+}
+footer .buttom p{
+    color: #ffffffa3;
+    text-align: center;
+    margin-top: 8px;
+} 
