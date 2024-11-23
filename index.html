@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style_daotao.css">
     <link rel="stylesheet" href="./assets/css/style_tintuc.css">
     <link rel="stylesheet" href="./assets/css/trangchu.css">
+    <link rel="stylesheet" href="./assets/html/dangki.html">
     <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 
     <title>Trang chủ</title>
@@ -23,10 +24,37 @@
             </div>
             <div class="block_login">
                 <a href="">Bảng vàng thành tích</a>
-                <a href="" style="margin-left: 30px;">Đăng nhập</a>
-                <span>/</span>
-                <a href="">Đăng ký</a>
+                <div id = "th">
+                    <div id="acount">
+                        <a href="#"><div id = "thongtin"></div></a>
+                        <a href="./assets/html/dangki.html" id = "thongtin1"></a>
+                    </div>
+                    <a href="/assets/html/dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
+                    
+                </div>
+                
             </div>
+            <script>
+                window.onload = function(){
+                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+                    if (loggedInUser && loggedInUser.email) {
+                        // Hiển thị tên người dùng trong div thongtin
+                        document.getElementById('thongtin').innerText = loggedInUser.email; 
+                        // Ẩn các liên kết đăng ký và đăng nhập
+                        document.getElementById('dangnhap').style.display = 'none'; 
+                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
+                        
+                    } else {
+                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                        document.getElementById("thongtin").innerText = ''; 
+                        documnet.getElementById("thongtin1").innerText = '';
+                        
+                    }
+                }
+
+            </script>
          </div>
          <div style="width: 85%; margin: auto;">
             <hr color="#0e2D80">
@@ -381,5 +409,6 @@
         </div>
 
     </footer>
+
 </body>
 </html>

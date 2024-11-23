@@ -69,21 +69,9 @@
             </div>
         </div>
     </div>
-    <!-- <div class="area" >
-        <ul class="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-        </ul>
-    </div > -->
+    
     <script type="text/javascript">
+        // Hàm hiển thị mật khẩu ở trang đăng nhập
          function togglePassword() {  
             const passwordField = document.getElementById("signupPassword");  
             const eyeIcon = document.getElementById("eyeIcon");  
@@ -97,7 +85,7 @@
                 eyeIcon.classList.add('fa-eye');  
             }  
         }  
-
+        // Hàm hiển thị mật khẩu ở trang đăng nhập
         function togglePassword1() {  
             const passwordField = document.getElementById("loginPassword");  
             const eyeIcon = document.getElementById("eyeIcon");  
@@ -111,10 +99,13 @@
                 eyeIcon.classList.add('fa-eye');  
             }  
         }
-
+        
+        // 
         const signUpButtom = document.getElementById('signUp')
         const signInButtom = document.getElementById('signIn')
         const main = document.getElementById('main')
+
+        // Chuyển sao giao diện giữa đăng nhập và đăng kí 
         signUpButtom.addEventListener('click',() => {
             main.classList.add("right-panel-active");
         });
@@ -122,12 +113,13 @@
             main.classList.remove("right-panel-active");
         });
 
-        if (!localStorage.getItem("account")) {
-            const adminAccount = {
-                user_0: JSON.stringify({ account: "cao", email: "cao@gmail.com", password: "cao123456" }),
-                user_1: JSON.stringify({ account: "tuan", email: "tuan@gmail.com", password: "tuan123456" })
-            };
-            localStorage.setItem("account", JSON.stringify(adminAccount));
+        // Kiểm tra và khởi tạo tài khoản account 
+        if (!localStorage.getItem("users")) {
+            const initialUser = [
+                ({ name: "cao", email: "cao@gmail.com", password: "cao123456" , role: "admin"}),
+                ({ name: "tuan", email: "tuan@gmail.com", password: "tuan123456" ,role : "admin"})
+            ];
+            localStorage.setItem("users", JSON.stringify(initialUser));
         }
         // xử lý lưu thông tin đăng ký vào LocalStorge
         const signupForm = document.getElementById('signupForm');
@@ -162,7 +154,7 @@
             }
 
             // Lưu thông tin người dùng mới vào danh sách
-            const user = { name, email, password };
+            const user = { name, email, password, role :"user" };
             users.push(user);
 
             // Cập nhật danh sách người dùng trong LocalStorage
@@ -181,23 +173,30 @@
 
             // Lấy thông tin người dùng từ LocalStorage 
             const users= JSON.parse(localStorage.getItem('users')) || [];
-            const accounts = JSON.parse(localStorage.getItem('account')) || [];
+
 
 
             // kiểm tra danh sách người dùng 
             const userFound = users.find(user => user.email === email && user.password ===password);
-            // Kiểm tra trong danh sách admin
-            const adminFound = Object.values(accounts).find(account => {
-                const admin = JSON.parse(account);
-                return admin.email === email && admin.password === password;
-            });
+           
 
             if (userFound) {
-                alert('Đăng nhập thành công với tư cách người dùng!');
+                // Bước 1: Xác định vai trò của người dùng 
+                const role = userFound.role === "admin" ? "quản trị viên" : "người dùng"
+                
+                // Bước 2: Thông báo thành công 
+                alert(`Đăng nhập thành công với tư cách ${role}!`)
+
+
+                // Lưu thông tin người dùng vào LocalStorage
+                localStorage.setItem('loggedInUser', JSON.stringify({
+                    email: userFound.email,
+                    name: userFound.name ,// Nếu có thêm thông tin
+                    role: userFound.role
+                }));
+                 
+
                 window.location.href = '/index.html'; // Chuyển hướng đến trang index.html
-            } else if (adminFound) {
-                alert('Đăng nhập thành công với tư cách quản trị viên!');
-                window.location.href = '/index.html'; // Chuyển hướng đến trang admin.html
 
             }else {
                 alert('Đăng nhập không thành công')

@@ -38,10 +38,12 @@ header {
 
 #header_contact .block_login {
     display: flex;
-    width: 330px;
+    width: 390px;
     justify-content: space-between;
 }
-
+#header_contact .block_login #acount {
+    display: flex;
+}
 .block_login a {
     text-decoration: none;
     color: black;
