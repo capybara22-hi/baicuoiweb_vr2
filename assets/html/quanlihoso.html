@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/quanlihoso.css">
     <link rel="stylesheet" href="/assets/css/style_header.css">
+    <link rel="stylesheet" href="/index.html">
+    <link rel="stylesheet" href="/assets/html/dangki.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Quản lí hồ sơ</title>
 </head>
@@ -19,10 +21,37 @@
             </div>
             <div class="block_login">
                 <a href="">Bảng vàng thành tích</a>
-                <a href="" style="margin-left: 30px;">Đăng nhập</a>
-                <span>/</span>
-                <a href="">Đăng ký</a>
+                <div id = "th">
+                    <div id="acount">
+                        <a href="#"><div id = "thongtin"></div></a>
+                        <a href="./dangki.html" id = "thongtin1"></a>
+                    </div>
+                    <a href="./dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
+                    
+                </div>
+                
             </div>
+            <script>
+                window.onload = function(){
+                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+                    if (loggedInUser && loggedInUser.email) {
+                        // Hiển thị tên người dùng trong div thongtin
+                        document.getElementById('thongtin').innerText = loggedInUser.email; 
+                        // Ẩn các liên kết đăng ký và đăng nhập
+                        document.getElementById('dangnhap').style.display = 'none'; 
+                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
+                        
+                    } else {
+                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                        document.getElementById("thongtin").innerText = ''; 
+                        documnet.getElementById("thongtin1").innerText = '';
+                        
+                    }
+                }
+
+            </script>
          </div>
          <div style="width: 85%; margin: auto;">
             <hr color="#0e2D80">
@@ -32,7 +61,7 @@
          <div id="header_slogan">
                 <div class="header_name">
                     <!-- <div class="img_logo"> -->
-                        <img src="./assets/img/img_header/logo_blue.svg" alt="">
+                        <img src="/assets/img/img_header/logo_blue.svg" alt="">
                     <!-- </div> -->
                     <div class="name_school">
                         <h2>TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</h2>
@@ -80,7 +109,7 @@
                         <li><a href="">Cơ cấu tổ chức</a></li>
                     </ul>
                 </li>
-                <a href="/assets/html/daotao.html"><li>
+                <a href="./daotao.html"><li>
                     Đào tạo
                     <ul class="menu_1">
                         <li><a href="">Đào tạo Đại học</a></li>
@@ -90,7 +119,7 @@
                     </ul>
                 </li></a>
                 <li>
-                    <a href="/assets/html/tintuc.html">Tin tức</a>
+                    <a href="./tintuc.html">Tin tức</a>
                     
                     <ul class="menu_1">
                         <li><a href="">Tin tuyển sinh</a></li>
@@ -101,7 +130,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/assets/html/diemchuan.html">Điểm chuẩn</a>
+                    <a href="./diemchuan.html">Điểm chuẩn</a>
                  
                     <ul class="menu_1">
                         <li><a href="">Điểm chuẩn các năm</a></li>
@@ -109,51 +138,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/assets/html/tuyenSinh.html">Xét Tuyển</a>
+                    <a href="./tuyenSinh.html">Xét Tuyển</a>
                     <ul class="menu_1">
                         <li class="menu_1-list">
                             <a href="">
                                 Xét tuyển
-                                <!-- <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul> -->
                             </a>
                             <i class="fa-solid fa-chevron-right arrow"></i>
                         </li>
-                        <!-- <li class="menu_1-list">
-                            <a href="">
-                                Tuyển sinh Thạc sĩ
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li class="menu_1-list">
-                            <a href="">
-                                Tuyển sinh Tiến sĩ
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li class="menu_1-list">
-                            <a href="">
-                                Văn bằng 2
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li> -->
+                      
                     </ul>
                 </li>
-                <li><a href="/assets/html/quanlihoso.html">Quản lí hồ sơ</a></li>
+                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
             </ul>
          </div>
     </header>
@@ -162,23 +158,30 @@
             <div class="wrapper">
                 <div class="khoi">
                     <div class="top">
-                        <h2>Quản lý hồ sơ</h2>
+                        <h2>QUẢN LÝ HỒ SƠ</h2>
+                        <div class = "gachchan"></div>
+                        <div class = "gachchan i2"></div>
+                        <div class = "gachchan i3"></div>
+                        <div class = "gachchan i4"></div>
+
                     </div>
                     <div class="menu">
-                        <div class="khoi3">
-                            <div class="khoi2">
+                        <div class="khoi3" id = "user">
+                            <div class="khoi32" >
                                 <div class = "vanban">Đăng kí xét hồ sơ </div>
                                 <a href="./student-form.html"><input type="button" value="Đăng kí" ></a>
                             </div>
                             <div class="hienthi1"><img src="/assets/img/anhcactrang/New-Employee-Form-PDF.png" alt="">
                             </div>
                         </div>
-                        <div class="khoi1">
+                        <div class="khoi1 " id = "admin">
                             <div class="khoi2">
                                 <div class = "vanban">Quản lý hồ sơ </div>
                                 <a href="./admin-approval.html"><input type="button" value="Quản lí" ></a></div>
                         </div>
-                        <div class="khoi1">
+                     
+
+                        <div class="khoi1 ">
                             <div class="khoi2">
                                 <div class = "vanban">Danh sách hồ sơ</div>
                                 <a href="./student-list.html"><input type="button" value="Hiển thị" ></a></div>
@@ -270,6 +273,40 @@
         </div>
 
     </footer>
+    <script>
+        window.onload = function(){
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+            console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+            if (loggedInUser && loggedInUser.email) {
+                // Hiển thị tên người dùng trong div thongtin
+                document.getElementById('thongtin').innerText = loggedInUser.email; 
+                // Ẩn các liên kết đăng ký và đăng nhập
+                document.getElementById('dangnhap').style.display = 'none'; 
+                document.getElementById('thongtin1').innerText = '| Đăng xuất'
+
+                // Kiểm tra đó là tài khoản admin hay khách
+                if (loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com")) {
+                    document.getElementById("admin").style.display = 'flex';
+                    document.getElementById("user").style.display = 'none';
+                } else {
+                    document.getElementById("admin").style.display = 'none';
+                    document.getElementById("user").style.display = 'flex';
+                }
+                                
+                             
+
+            
+                       
+            } else {
+                // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                document.getElementById("thongtin").innerText = ''; 
+                document.getElementById("thongtin1").innerText = '';
+                
+            }
+        }
+
+    </script>
     <script src="/assets/javascript/tuyensinh.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ li{
 /* ////////////////////////////////////////////////// */
 main .container {
     width: 85%;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 main .container .top{
     text-align: center;
@@ -68,11 +68,30 @@ main .container .top{
     color: var(--white-color);
     
 }
-
+main .container .top h2{
+    color:var(--menu--color)
+    
+}
+main .container .top .gachchan{
+    background-color:var(--menu--color);
+    width: 200px;
+    height: 10px;
+    border-radius:5px ;
+    margin: 8px auto;
+}
+main .container .top .gachchan.i2{
+    width: 150px;
+}
+main .container .top .gachchan.i3{
+    width: 110px; 
+}
+main .container .top .gachchan.i4{
+    width: 80px;
+}
 main .container .khoi {
     width: 100%;
     height: 400px;
-    background-color:var(--light-text-color);
+    /* background-color:var(--light-text-color); */
     justify-content: center;
     align-items: center;
 }
@@ -102,7 +121,16 @@ main .container .khoi .menu .khoi3 .hienthi1 img{
     height: 200px;
     background-color: var(--white-color);
 }
-main .container .khoi .menu .khoi3 .khoi2 {
+main .container .khoi .menu .khoi3#user {
+    width: 500px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: var(--menu--color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .container .khoi .menu .khoi3 .khoi32 {
     width: 200px;
     height: 200px;
     border-radius: 20px;
@@ -113,6 +141,15 @@ main .container .khoi .menu .khoi3 .khoi2 {
     margin-right: 50px;
     padding-top: 50px;
 }
+
+
+main .container .khoi .menu .khoi1 .khoi2 input, .khoi3 .khoi32 input {
+    margin-top: 10px;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+
 main .container .khoi .menu .khoi1 .khoi2 input, .khoi3 .khoi2 input {
     margin-top: 10px;
     width: 100px;
@@ -147,6 +184,9 @@ main .container .khoi .menu .khoi1 .khoi2 {
     font-size: 20px;
     text-align: center;
     padding-top: 50px;
+}
+main .container .khoi .menu .khoi1#admin .khoi2 {
+    margin: 50px auto;
 }
 
 footer{

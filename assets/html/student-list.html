@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh Sách Sinh Viên</title>
+    <link rel="stylesheet" href="">
     <style type="text/css">
         .quaylai button {
             width: 100px;
@@ -19,7 +20,7 @@
         }
 
         .khoi1 {
-            width: 1200px;
+            width: 1400px;
             padding: 30px;
             margin: 0 auto;
             background-color: white;
@@ -27,7 +28,7 @@
 
         table {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             border-collapse: collapse;
             margin-top: 1rem;
         }
@@ -66,6 +67,7 @@
                     <th>Điểm lớp 11</th>
                     <th>Điểm lớp 12</th>
                     <th>Trạng thái</th>
+                    <th>Cập nhật</th>
                 </tr>
             </thead>
             <tbody id="pendingBody"></tbody>
@@ -86,7 +88,7 @@
                     <th>Điểm lớp 10</th>
                     <th>Điểm lớp 11</th>
                     <th>Điểm lớp 12</th>
-                    <th>Xóa</th>
+                    
                 </tr>
             </thead>
             <tbody id="tableBody"></tbody>
@@ -118,6 +120,7 @@
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
                         <td>Đang chờ xét duyệt</td>
+                         <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
                     `;
                     pendingBody.appendChild(row);
                 }
@@ -141,20 +144,23 @@
                         <td>${student.diem10}</td>
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
-                        <td><button onclick="deleteStudent(${index})">Xóa</button></td>
+                       
                     `;
                     tableBody.appendChild(row);
                 }
             });
         }
 
-        // Xóa sinh viên đã chấp nhận
-        function deleteStudent(index) {
+        // Update thông tin sinh viên 
+        function updateStudent(index) {
             students.splice(index, 1); // Xóa sinh viên khỏi mảng
             localStorage.setItem("students", JSON.stringify(students)); // Cập nhật localStorage
             displayAcceptedStudents(); // Hiển thị lại danh sách
-            alert("Đã xóa thông tin sinh viên");
+            alert("Đã xóa thông tin sinh viên, Yêu cầu đăng kí lại");
+            // vào lại trang đăng kí đăng kí lại
+            window.location.href = "./student-form.html"
         }
+        
 
         // Gọi các hàm hiển thị
         displayPendingStudents();

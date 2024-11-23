@@ -19,10 +19,37 @@
             </div>
             <div class="block_login">
                 <a href="">Bảng vàng thành tích</a>
-                <a href="" style="margin-left: 30px;">Đăng nhập</a>
-                <span>/</span>
-                <a href="">Đăng ký</a>
+                <div id = "th">
+                    <div id="acount">
+                        <a href="#"><div id = "thongtin"></div></a>
+                        <a href="./dangki.html" id = "thongtin1"></a>
+                    </div>
+                    <a href="./dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
+                    
+                </div>
+                
             </div>
+            <script>
+                window.onload = function(){
+                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+                    if (loggedInUser && loggedInUser.email) {
+                        // Hiển thị tên người dùng trong div thongtin
+                        document.getElementById('thongtin').innerText = loggedInUser.email; 
+                        // Ẩn các liên kết đăng ký và đăng nhập
+                        document.getElementById('dangnhap').style.display = 'none'; 
+                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
+                        
+                    } else {
+                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                        document.getElementById("thongtin").innerText = ''; 
+                        documnet.getElementById("thongtin1").innerText = '';
+                        
+                    }
+                }
+
+            </script>
          </div>
          <div style="width: 85%; margin: auto;">
             <hr color="#0e2D80">
@@ -80,7 +107,7 @@
                         <li><a href="">Cơ cấu tổ chức</a></li>
                     </ul>
                 </li>
-                <a href="/assets/html/daotao.html"><li>
+                <a href="./daotao.html"><li>
                     Đào tạo
                     <ul class="menu_1">
                         <li><a href="">Đào tạo Đại học</a></li>
@@ -90,7 +117,7 @@
                     </ul>
                 </li></a>
                 <li>
-                    <a href="/assets/html/tintuc.html">Tin tức</a>
+                    <a href="./tintuc.html">Tin tức</a>
                     
                     <ul class="menu_1">
                         <li><a href="">Tin tuyển sinh</a></li>
@@ -101,7 +128,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/assets/html/diemchuan.html">Điểm chuẩn</a>
+                    <a href="./diemchuan.html">Điểm chuẩn</a>
                  
                     <ul class="menu_1">
                         <li><a href="">Điểm chuẩn các năm</a></li>
@@ -109,51 +136,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/assets/html/tuyenSinh.html">Xét Tuyển</a>
+                    <a href="./tuyenSinh.html">Xét Tuyển</a>
                     <ul class="menu_1">
                         <li class="menu_1-list">
                             <a href="">
                                 Xét tuyển
-                                <!-- <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul> -->
                             </a>
                             <i class="fa-solid fa-chevron-right arrow"></i>
                         </li>
-                        <!-- <li class="menu_1-list">
-                            <a href="">
-                                Tuyển sinh Thạc sĩ
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li class="menu_1-list">
-                            <a href="">
-                                Tuyển sinh Tiến sĩ
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li class="menu_1-list">
-                            <a href="">
-                                Văn bằng 2
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Thông tin tuyển sinh</a></li>
-                                    <li><a href="">Ngành tuyển sinh</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li> -->
+                      
                     </ul>
                 </li>
-                <li><a href="/assets/html/quanlihoso.html">Quản lí hồ sơ</a></li>
+                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
             </ul>
          </div>
     </header>
