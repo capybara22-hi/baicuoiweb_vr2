@@ -82,17 +82,19 @@ html {
 }
 
 .list li {
-    list-style:outside;
+    list-style: none;
     padding: 10px;
 }
 
 .icon_check {
     font-size: 16px;
     color: red;
+    margin-right: 5px;
 }
 
 .mo_ta .content {
-    margin: 25px 30px;
+    margin: 50px 30px;
+    text-align: center;
 }
 
 /* CSS chương trình đào tạo */
