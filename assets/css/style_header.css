@@ -101,6 +101,10 @@ header {
     position: relative;
 }
 
+.menu li a {
+    color: black;
+}
+
 .menu li:before {
     content: "";
     position: absolute;
@@ -160,7 +164,7 @@ header {
     text-decoration: none;
 }
 
-#header_nav li a::after{
+.menu_1 li a::after{
     content: '';
     position: absolute;
     left: 0;
