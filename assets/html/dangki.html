@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="container" id="main">
+        <!-- Trang đăng kí  -->
         <div class="sign-up">
             <form id="signupForm"> 
                     <h1>Tạo tài khoản</h1>
@@ -26,12 +27,13 @@
                     <div class="password-container">
                         <input type="password" id = "signupPassword" placeholder="Mật Khẩu" required>
                         <span class="eye" onclick="togglePassword()">  
-                            <i class="fa-solid fa-eye"></i>  
+                            <i id = "eyeIcon" class="fa-solid fa-eye"></i>  
                         </span>  
                     </div>
                     <button type="sumbit">Đăng kí</button>
             </form>
         </div>
+        <!-- Trang đăng nhập -->
         <div class="sign-in">
             <form id="loginForm"> 
                     <h1>Đăng nhập</h1>
@@ -45,7 +47,7 @@
                     <div class="password-container">
                         <input type="password" id = "loginPassword" placeholder="Mật khẩu" required ="">
                         <span class="eye" onclick="togglePassword1()">  
-                            <i class="fa-solid fa-eye"></i>  
+                            <i id = "eyeIconLogin" class="fa-solid fa-eye"></i>  
                         </span>  
                     </div>
                     <a href="#">Quên mật khẩu</a>
@@ -74,9 +76,14 @@
         // Hàm hiển thị mật khẩu ở trang đăng nhập
          function togglePassword() {  
             const passwordField = document.getElementById("signupPassword");  
-            const eyeIcon = document.getElementById("eyeIcon");  
+            const eyeIcon = document.getElementById("eyeIcon");
+            
+            
+            // Kiểm tra đường dẫn có loại(type == password)
             if (passwordField.type === 'password') {  
+                // thay đổi đường dẫn thành text
                 passwordField.type = 'text';  
+                // Lưu ý cái này 
                 eyeIcon.classList.remove('fa-eye');  
                 eyeIcon.classList.add('fa-eye-slash');  
             } else {  
@@ -88,7 +95,7 @@
         // Hàm hiển thị mật khẩu ở trang đăng nhập
         function togglePassword1() {  
             const passwordField = document.getElementById("loginPassword");  
-            const eyeIcon = document.getElementById("eyeIcon");  
+            const eyeIcon = document.getElementById("eyeIconLogin");  
             if (passwordField.type === 'password') {  
                 passwordField.type = 'text';  
                 eyeIcon.classList.remove('fa-eye');  
@@ -124,7 +131,7 @@
         // xử lý lưu thông tin đăng ký vào LocalStorge
         const signupForm = document.getElementById('signupForm');
         signupForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            e.preventDefault();// Ngăn không cho form gửi dữ liệu và làm mới trang
 
             const name = document.getElementById('signupName').value;
             const email = document.getElementById('signupEmail').value;
@@ -184,6 +191,11 @@
                 // Bước 1: Xác định vai trò của người dùng 
                 const role = userFound.role === "admin" ? "quản trị viên" : "người dùng"
                 
+                /*comment 
+                    const role = userFound.role === "admin" ? "quản trị viên" : "người dùng"
+                    condition ? expression_if_true : expression_if_false
+                    
+                */ 
                 // Bước 2: Thông báo thành công 
                 alert(`Đăng nhập thành công với tư cách ${role}!`)
 

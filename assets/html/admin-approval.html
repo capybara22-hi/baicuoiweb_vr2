@@ -42,6 +42,7 @@
                         <p>Điểm lớp 10: ${student.diem10}</p>
                         <p>Điểm lớp 11: ${student.diem11}</p>
                         <p>Điểm lớp 12: ${student.diem12}</p>
+                        <button onclick="yeucauStudent(${index})">Yêu cầu chỉnh</button>
                         <button onclick="approveStudent(${index})">Chấp nhận</button>
                         <button onclick="rejectStudent(${index})">Từ chối</button>
                     `;
@@ -50,10 +51,17 @@
             });
         }
 
+        function yeucauStudent(index){
+            students[index].status = "yeucau"; // Cập nhật trạng thái
+            localStorage.setItem("students", JSON.stringify(students)); // Cập nhật vào localStorage
+            updateRequests(); // Cập nhật giao diện trang admin
+            alert("Yêu cầu Sinh viên điền lại phiếu");
+        }
+
         function approveStudent(index) {
-            students[index].status = "accepted";
+            students[index].status = "accepted"; //thay đổi giá trị của status từ pending sang accepted hoặc rejected.
             localStorage.setItem("students", JSON.stringify(students));
-            updateRequests();
+            updateRequests(); // ẩn thông tin trên màn hình 
             alert("Phiếu đã được chấp nhận.");
         }
 
@@ -63,6 +71,7 @@
             updateRequests();
             alert("Phiếu đã bị từ chối.");
         }
+        
 
         updateRequests();
     </script>

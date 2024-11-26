@@ -103,10 +103,34 @@
         const pendingBody = document.getElementById("pendingBody");
 
         // Hiển thị danh sách đang chờ duyệt
+        // function displayPendingStudents() {
+        //     pendingBody.innerHTML = ""; // Xóa nội dung cũ
+        //     students.forEach((student, index) => {
+        //         if (student.status === "pending") {
+        //             const row = document.createElement("tr");
+        //             row.innerHTML = `
+        //                 <td>${index + 1}</td>
+        //                 <td>${student.hoTen}</td>
+        //                 <td>${student.email}</td>
+        //                 <td>${student.sdt}</td>
+        //                 <td>${student.cccd}</td>
+        //                 <td>${student.ngaySinh}</td>
+        //                 <td>${student.gioiTinh}</td>
+        //                 <td>${student.diem10}</td>
+        //                 <td>${student.diem11}</td>
+        //                 <td>${student.diem12}</td>
+        //                 <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td>
+        //                 <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
+        //             `;
+        //             pendingBody.appendChild(row);
+        //         }
+        //     });
+        // }
+        // Hiển thị danh sách đang chờ duyệt
         function displayPendingStudents() {
             pendingBody.innerHTML = ""; // Xóa nội dung cũ
             students.forEach((student, index) => {
-                if (student.status === "pending") {
+                if (student.status === "pending" || student.status === "yeucau") {
                     const row = document.createElement("tr");
                     row.innerHTML = `
                         <td>${index + 1}</td>
@@ -119,17 +143,25 @@
                         <td>${student.diem10}</td>
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
-                        <td>Đang chờ xét duyệt</td>
-                         <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
+                        <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
+                        <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
                     `;
+
+                    /*comment 
+                    <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
+                    condition ? expression_if_true : expression_if_false
+                    
+                    */ 
+
                     pendingBody.appendChild(row);
                 }
             });
         }
 
+
         // Hiển thị danh sách đã được chấp nhận
         function displayAcceptedStudents() {
-            tableBody.innerHTML = ""; // Xóa nội dung cũ
+            tableBody.innerHTML = ""; 
             students.forEach((student, index) => {
                 if (student.status === "accepted") {
                     const row = document.createElement("tr");
@@ -160,6 +192,8 @@
             // vào lại trang đăng kí đăng kí lại
             window.location.href = "./student-form.html"
         }
+    
+        
         
 
         // Gọi các hàm hiển thị
