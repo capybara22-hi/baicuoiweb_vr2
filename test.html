@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Top</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 2000px; /* Giả lập nội dung dài để cuộn */
+            margin: 0;
+        }
+
+        /* Nút mũi tên */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007BFF; /* Màu nền nút */
+            color: #FFFFFF; /* Màu biểu tượng */
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Hiển thị nút khi cuộn xuống */
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nút quay lại đầu trang -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
+    <script>
+        // Lấy nút mũi tên
+        const backToTopButton = document.getElementById('backToTop');
+
+        // Lắng nghe sự kiện cuộn
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Hiển thị nút khi cuộn xuống quá 300px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Cuộn về đầu trang khi nhấn vào nút
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Cuộn mượt
+            });
+        });
+    </script>
+</body>
+</html>
