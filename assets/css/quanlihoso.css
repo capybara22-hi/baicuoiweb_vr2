@@ -90,7 +90,7 @@ main .container .top .gachchan.i4{
 }
 main .container .khoi {
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
     /* background-color:var(--light-text-color); */
     justify-content: center;
     align-items: center;

@@ -171,7 +171,7 @@ main .diem{
 }
 
 .diem .khoi .item .icon .khoi1 li{
-    margin-top: 6px;
+    margin-top: 10px;
     font-size: 8px;
 
     
@@ -193,13 +193,15 @@ main .diem{
     color: var(--dark-color);
 }
 .diem .khoi .item .icon .khoilon .foot a{
-
     margin-top: 10px;
     display: flex;
     font-size: 22px;
     color: var(--light-text-color);
-
-
+}
+.diem .khoi .item .icon .khoilon .foot a:hover{
+    color: var(--primary-color);
+    transition: 0.5s;
+    font-weight: bold;
 }
 .diem .khoi .item .icon .khoilon .foot i{
     padding-top: 4px;
@@ -219,18 +221,7 @@ main .diem{
     width: 50%;
     background-color: #2874d8;
 }
-/* .diem .khoi .item .ican img{
-   
-    background-color: #f0f0f0;
-   
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.ican.show img {
-    opacity: 1;
-    transform: translateY(0);
-} */
+
 .ican img {
     display: flex;
     width: 80%;

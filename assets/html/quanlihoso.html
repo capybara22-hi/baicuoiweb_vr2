@@ -93,7 +93,7 @@
                                     <li><a href="">Bản đồ trường</a></li>
                                 </ul>
                             </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
+                        +    <i class="fa-solid fa-chevron-right arrow"></i>
                         </li>
                         <li class="menu_1-list">
                             <a href="">
@@ -127,14 +127,15 @@
                         <li><a href="">Lịch công tác tuần</a></li>
                         <li><a href="">Hoạt động chung</a></li>
                         <li><a href="">Thông tin & Báo chí</a></li>
+
                     </ul>
                 </li>
                 <li>
                     <a href="./diemchuan.html">Điểm chuẩn</a>
                  
                     <ul class="menu_1">
-                        <li><a href="">Điểm chuẩn các năm</a></li>
-                        <li><a href="">Thống kê điểm</a></li>
+                        <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
+                        <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
                     </ul>
                 </li>
                 <li>
@@ -144,12 +145,20 @@
                             <a href="">
                                 Xét tuyển
                             </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
+                            
                         </li>
                       
                     </ul>
                 </li>
-                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
+                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a>
+                    <ul class="menu_1">
+                        <li class="menu_1-list">
+                            <a href="./quanlihoso.html">
+                                Quản lý hồ sơ 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
          </div>
     </header>
@@ -159,6 +168,8 @@
                 <div class="khoi">
                     <div class="top">
                         <h2>QUẢN LÝ HỒ SƠ</h2>
+                        <div id ="chaouser" style="justify-content: center;"><h2 style="color: coral;">Chào, user!</h2></div>
+                        <div id ="chaoadmin"  style="justify-content: center;"><h2 style="color: coral;">Chào, admin!</h2></div>
                         <div class = "gachchan"></div>
                         <div class = "gachchan i2"></div>
                         <div class = "gachchan i3"></div>
@@ -289,9 +300,15 @@
                 if (loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com")) {
                     document.getElementById("admin").style.display = 'flex';
                     document.getElementById("user").style.display = 'none';
+                    document.getElementById("chaoadmin").style.display = 'flex';
+                    document.getElementById("chaouser").style.display = 'none';
+                   
                 } else {
                     document.getElementById("admin").style.display = 'none';
                     document.getElementById("user").style.display = 'flex';
+                    document.getElementById("chaoadmin").style.display = 'none';
+                    document.getElementById("chaouser").style.display = 'flex';
+                   
                 }
                                 
                              
