@@ -15,25 +15,15 @@
     </div> -->
     <div class="navbar_fixed" id="header_fixed">
         <ul class="list_menu">
-            <li><a href=""><i class="fa-solid fa-house house_icon"></i>Trang chủ</a></li>
-            <li><a href="">Đào tạo</a></li>
-            <li><a href="">Tin tức</a></li>
-            <li><a href="">Điểm chuẩn</a></li>
-            <li><a href="">Xét tuyển</a></li>
-            <li><a href="">Quản lí hồ sơ</a></li>
+            <li><a href="/index.html"><i class="fa-solid fa-house house_icon"></i>Trang chủ</a></li>
+            <li><a href="./daotao.html">Đào tạo</a></li>
+            <li><a href="./tintuc.html">Tin tức</a></li>
+            <li><a href="./diemchuan.html">Điểm chuẩn</a></li>
+            <li><a href="./tuyenSinh.html">Xét tuyển</a></li>
+            <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
         </ul>
     </div>
-    <script>
-    // JavaScript để hiển thị menu khi cuộn đến 200px
-        const header = document.getElementById('header_fixed');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 200) {
-                header.classList.add('show');
-            } else {
-                header.classList.remove('show');
-            }
-        });
-    </script>
+    <!-- <script src="/assets/javascript/tintuc.js"></script> -->
     <header>
         <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
          <div id="header_contact">
@@ -215,9 +205,28 @@
         </div>
         <div id="block_child_2">
             <section class="box active" id="tintuyensinh">
-                <div class="box_title">
+                <div class="box_title box_submit">
                     <h2>Tin tuyển sinh</h2>
+                    <!-- Xử lí nút  nhấn đăng tin -->
+                    <a href=""><button type="button">Đăng tin</button></a>
+                    <style>
+                        .box_submit {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .box_submit a {
+                            text-decoration: none;
+                            color: #000000;
+                            line-height: 42px;
+                            font-size: 16px;
+                        }
+
+                        .box_submit button {
+                            padding: 5px 30px;
+                        }
+                    </style>
                 </div>
+                <div id="postList"></div> <!-- Div trống để thêm phần tin tức vào -->
                 <div class="block_tintuc">
                     <img src="/assets/img/img_tintuc/thongbaonhaphoc.png" alt="" class="fix-img">
                     <div class="tintuc">
@@ -566,65 +575,38 @@
 
     </footer>
 
-    <!-- Phần javascript xử lí thanh cuộn trang khi nhấn vào danh mục -->
-    <!-- <script>
-        // Lấy tất cả các liên kết có class 'scroll-link'
-        document.querySelectorAll('.scroll-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Ngăn hành vi mặc định của thẻ <a>
+    <div class="background_dang_tin">
+        <div class="block_dang_tin">
+            <h2>Đăng Tin Tuyển Sinh</h2>
+            <div id="adminSection" style="display: none;"> <!-- style="display: none;" -->
+                <!-- <h2>Đăng Tin Tuyển Sinh</h2> -->
+                <form id="postForm">
+                    <h3>Nhập tiêu đề của bài đăng: </h3>
+                    <input type="text" id="postTitle" placeholder="Tiêu đề bài đăng" required>
+                    <h3>Nhập mô tả của bài đăng: </h3>
+                    <textarea id="postDescription" placeholder="Mô tả bài đăng (tối đa 50 từ)" required></textarea>
+                    <h3>Chọn ảnh đại diện cho bài đăng: </h3>
+                    <div id="imageSelectionWrapper">
+                        <button type="button" id="toggleImageSelection">Chọn Ảnh</button>
+                        <div id="imageSelection" style="display: none;"> <!-- style="display: none;" -->
+                            <p style="margin-bottom: 20px;">Chọn ảnh:</p>
+                            <div class="image-options">
+                                <img src="/assets/img/img_tintuc/thongbao.png" alt="Ảnh 1" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/kithi.jpg" alt="Ảnh 2" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/thongbaonhaphoc.png" alt="Ảnh 3" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/hoatdongchung_2.jpg" alt="Ảnh 4" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/thongtin_2.jpg" alt="Ảnh 5" class="selectable-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="submit_btn">Đăng bài</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                // Lấy ID mục tiêu từ thuộc tính href
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    // Tính toán vị trí cuộn (offsetTop - 50px)
-                    const offsetTop = targetElement.offsetTop - 50;
-
-                    // Cuộn mượt đến vị trí tính toán
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script> -->
-
-    <script>
-        // Lấy tất cả các liên kết có class 'scroll-link'
-        document.querySelectorAll('.scroll-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); // Ngăn hành vi mặc định của thẻ <a>
-
-                // Lấy ID mục tiêu từ thuộc tính href
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                // Ẩn tất cả các khối nội dung
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                // Hiển thị khối nội dung được chọn
-                if (targetElement) {
-                    targetElement.classList.add('active');
-
-                    // Tính toán vị trí cuộn (offsetTop - 50px)
-                    const offsetTop = targetElement.offsetTop - 50;
-
-                    // Cuộn mượt đến vị trí tính toán
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-
-    <script>
-        
-    </script>
+    <script src="/assets/javascript/test.js"></script>
 </body>
 </html>

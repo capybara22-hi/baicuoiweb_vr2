@@ -133,15 +133,14 @@ html {
     height: 50px;
 }
 
-
-
 .news_bubble .news_title {
     margin-left: 5px;
     font-style: italic;
 }
 
-.news_bubble .news_title:hover {
+.news_bubble:hover {
     color: red;
+    cursor: pointer;
 }
 
 /* CSS phần tin tức chính */
@@ -150,21 +149,25 @@ html {
     margin-bottom: 20px;
 }
 
+.post,
 .block_tintuc {
     display: flex;
     margin-bottom: 30px;
     align-items: flex-start;
 }
 
+.post .content,
 .block_tintuc .tintuc {
     margin-left: 20px;
 }
 
+.post .content h3:hover,
 .tintuc h3:hover {
     cursor: pointer;
     color: red;
 }
 
+.post .content p,
 .tintuc .tintuc_content {
     opacity: 0.5;
     font-style: italic;
@@ -173,6 +176,7 @@ html {
     margin-top: 10px;
 }
 
+.post .content .date,
 .tintuc .tintuc_day {
     margin-top: 5px;
     /* margin-left: 10px; */
@@ -196,4 +200,137 @@ section .box.active {
     box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
     height: 120px;
     width: 200px;
+}
+
+
+/* CSS phần đăng tin  */
+.background_dang_tin {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.block_dang_tin {
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn ease 0.5s;
+}
+
+.block_dang_tin h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* .post {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+} */
+
+.post img {
+    /* max-width: 150px;
+    margin-right: 20px; */
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    height: 120px;
+    width: 200px;
+}
+
+.post .content {
+    flex-grow: 1;
+}
+
+/* .post .content h3 {
+    margin: 0;
+} */
+
+/* .post .content .date {
+    font-size: 0.9em;
+    color: gray;
+} */
+
+/* .post .content p {
+    margin: 5px 0;
+} */
+
+.admin-buttons {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Phần này CSS cho phần html nhập dữ liệu */
+#imageSelection {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+#toggleImageSelection {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.image-options {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.selectable-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.selectable-image.selected {
+    border-color: blue;
+}
+
+#adminSection {
+    padding: 0 30px;
+    padding-bottom: 30px;
+}
+
+#postTitle {
+    width: 100%;
+    padding: 10px;
+}
+
+#postDescription {
+    width: 100%;
+    height: 80px;
+}
+
+#adminSection h3 {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.submit_btn {
+    padding: 10px 30px;
+    /* background-color: aqua; */ 
+    margin-top: 30px;
 }
