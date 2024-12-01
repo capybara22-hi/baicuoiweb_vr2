@@ -229,7 +229,7 @@
         const students = JSON.parse(localStorage.getItem("students")) || [];
 
         // Kiểm tra người dùng hiện tại đã gửi phiếu chưa 
-        const ktr = students.some(student => student.email === loggedInUser.email || student.cccd === document.getElementById("cccd").value); 
+        const ktr = students.some(student => student.email === document.getElementById("email").value || student.cccd === document.getElementById("cccd").value); 
 
         if(ktr){
             alert("Bạn đã gửi phiếu đăng kí trước đó. Mỗi tài khoản chỉ được gửi một phiếu. ");
