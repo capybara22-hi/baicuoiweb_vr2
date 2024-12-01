@@ -11,6 +11,14 @@
             height: 60px;
             margin-top: 10px;
             background-color: #cf6363;
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        .quaylai button:hover {
+            background-color: #1e40af;
+            transition: 0.5s;
         }
 
         body {
@@ -25,17 +33,24 @@
             margin: 0 auto;
             background-color: white;
         }
+        .khoi1 .boc{
+            background-color: #cf6363;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: #ffffff;
+        }
 
         table {
             width: 100%;
             max-width: 1400px;
             border-collapse: collapse;
-            margin-top: 1rem;
+            /* margin-top: 1rem;  1rem = 1.6px */
         }
 
         th,
         td {
-            padding: 0.75rem;
+            padding: 12px;
             border: 1px solid #1e3a8a;
             text-align: left;
         }
@@ -52,7 +67,7 @@
 </head>
 <body>
     <div class="khoi1">
-        <h1>Danh Sách Sinh Viên Đang Chờ Xét Duyệt</h1>
+        <div class="boc"><h1>Danh Sách Sinh Viên Đang Chờ Xét Duyệt</h1></div>
         <table id="pendingTable">
             <thead>
                 <tr>
@@ -75,7 +90,7 @@
         </table>
     </div>
     <div class="khoi1">
-        <h1>Danh Sách Sinh Viên Đã Được Chấp Nhận</h1>
+        <div class="boc"><h1>Danh Sách Sinh Viên Đã Được Chấp Nhận</h1></div>
         <table id="infoTable">
             <thead>
                 <tr>
@@ -104,7 +119,13 @@
         const tableBody = document.getElementById("tableBody");
         const pendingBody = document.getElementById("pendingBody");
         // Khi tạo hoặc cập nhật sinh viên, thêm timestamp
-        m
+        
+        // Giả sử sinh viên mới được tạo ở đây
+        function addStudent(newStudent) {
+            newStudent.timestamp = new Date().toLocaleString();  // Thêm timestamp hiện tại
+            students.push(newStudent);                           // Thêm vào mảng students
+            localStorage.setItem("students", JSON.stringify(students)); // Cập nhật localStorage
+        }
 
 
         // Hiển thị danh sách đang chờ duyệt

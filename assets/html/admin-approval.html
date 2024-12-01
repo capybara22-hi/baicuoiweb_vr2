@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Phiếu Đăng Ký</title>
-</head>
-<body>
-    <h1>Quản Lý Phiếu Đăng Ký</h1>
-    <div id="pendingRequests"></div>
     <style type="text/css">
         .quaylai button{
             width: 100px ;
@@ -15,9 +11,80 @@
             margin-top: 10px;
             background-color: #cf6363;
         }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .khoi1 {
+            width: 1400px;
+            padding: 30px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        .khoi1 .boc{
+            background-color: #cf6363;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1400px;
+            border-collapse: collapse;
+            /* margin-top: 1rem;  1rem = 1.6px */
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #1e3a8a;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e40af;
+            color: #ffffff;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
     </style>
-    <div class = "quaylai">
-            <a href="./quanlihoso.html"><button>Quay lại</button></a>
+</head>
+<body>
+    
+    <div class="khoi1">
+
+        <div class="boc"><h1>Quản Lý Phiếu Đăng Ký</h1></div>
+        <table id="infoTable">
+            <thead>
+                <tr>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Số CMND/CCCD</th>
+                    <th>Ngày sinh</th>
+                    <th>Giới tính</th>
+                    <th>Điểm lớp 10</th>
+                    <th>Điểm lớp 11</th>
+                    <th>Điểm lớp 12</th>
+                    <th>Yêu cầu điền lại</th>
+                    <th>Chấp nhận</th>
+                    <th>Từ chối</th>
+    
+                </tr>
+            </thead>
+            <tbody id="pendingRequests"></tbody>
+        </table>
+        
+        <div class = "quaylai">
+                <a href="./quanlihoso.html"><button>Quay lại</button></a>
+        </div>
     </div>
     <script>
 
@@ -31,20 +98,20 @@
             pendingRequests.innerHTML = '';
             students.forEach((student, index) => {
                 if (student.status === "pending") {
-                    const studentDiv = document.createElement("div");
+                    const studentDiv = document.createElement("tr");
                     studentDiv.innerHTML = `
-                        <p>Họ và tên: ${student.hoTen}</p>
-                        <p>Email: ${student.email}</p>
-                        <p>Số điện thoại: ${student.sdt}</p>
-                        <p>Số CMND/CCCD: ${student.cccd}</p>
-                        <p>Ngày sinh: ${student.ngaySinh}</p>
-                        <p>Giới tính: ${student.gioiTinh}</p>
-                        <p>Điểm lớp 10: ${student.diem10}</p>
-                        <p>Điểm lớp 11: ${student.diem11}</p>
-                        <p>Điểm lớp 12: ${student.diem12}</p>
-                        <button onclick="yeucauStudent(${index})">Yêu cầu chỉnh</button>
-                        <button onclick="approveStudent(${index})">Chấp nhận</button>
-                        <button onclick="rejectStudent(${index})">Từ chối</button>
+                        <td>${student.hoTen}</td>
+                        <td>${student.email}</td>
+                        <td>${student.sdt}</td>
+                        <td>${student.cccd}</td>
+                        <td>${student.ngaySinh}</td>
+                        <td>${student.gioiTinh}</td>
+                        <td>${student.diem10}</td>
+                        <td>${student.diem11}</td>
+                        <td>${student.diem12}</td>
+                        <td><button onclick="yeucauStudent(${index})">Yêu cầu chỉnh</button></td>
+                        <td><button onclick="approveStudent(${index})">Chấp nhận</button></td>
+                        <td><button onclick="rejectStudent(${index})">Từ chối</button></td>
                     `;
                     pendingRequests.appendChild(studentDiv);
                 }

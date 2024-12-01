@@ -145,16 +145,35 @@ main .container .khoi .menu .khoi3 .khoi32 {
 
 main .container .khoi .menu .khoi1 .khoi2 input, .khoi3 .khoi32 input {
     margin-top: 10px;
-    width: 100px;
+    width: 120px;
     height: 40px;
     font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+main .container .khoi .menu .khoi3 .khoi32 .vanban {
+    margin-top: 18px;
+}
+main .container .khoi .menu .khoi1 .khoi2 input:hover, .khoi3 .khoi32 input:hover {
+    background-color: #00368c;
+    color: #ffffff;
+    transition: 0.5s ;
+    
 }
 
-main .container .khoi .menu .khoi1 .khoi2 input, .khoi3 .khoi2 input {
+
+main .container .khoi .menu .khoi3 .khoi2 input {
     margin-top: 10px;
-    width: 100px;
+    width: 120px;
     height: 40px;
     font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+main .container .khoi .menu .khoi3 .khoi2 input:hover {
+    background-color: #00368c;
+    color: #ffffff;
+    transition: 0.5s ;
 }
 main .container .khoi .menu .khoi1 a .vanban{
    width: 200px;

@@ -5,15 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phiếu Đăng Ký Tuyển Sinh</title>
     <style>
-        .quaylai {
-            width: 100px;
-            height: 60px;
-            background-color: #fdfcfc;
-            /* border: 2px solid #000; */
-        }
-        .quaylai p{
-           padding-top: 20px;
-        }
+        
         a{
             text-align: center;
             text-decoration: none;
@@ -91,17 +83,39 @@
            margin-left: 75px;
             
         }
+        
+        .button {
+            height: 60px;
+            display: flex;
+            gap: 200px;
+
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         button {
             width: 100px;
             height: 60px;
-            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
             background-color: #cf6363;
         }
-        .button {
+        /* .button {
             display: flex;
             gap: 200px;
             flex-wrap: wrap;
             justify-content: center;
+        } */
+        .quaylai {
+            width: 100px;
+            height: 60px;
+            background-color: #c5ee10;
+            font-size: 18px;
+            font-weight: bold;
+            border: 2px solid #ce5151;
+            /* position: absolute; */
+        }
+        .quaylai p{
+            color: #9b4242;
         }
     </style>
 </head>
@@ -188,9 +202,9 @@
         </div>
         <div class = "button ">
             <button type="submit">Gửi phiếu</button>
-            <a href="./quanlihoso.html"><div class="quaylai">
+            <div class="quaylai"><a href="./quanlihoso.html">
                 <p>Quay lại</p>
-            </div></a>
+            </a></div>
         </div>
         
     </form>
