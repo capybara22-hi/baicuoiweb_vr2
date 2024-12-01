@@ -113,7 +113,7 @@
                         <td><button onclick="approveStudent(${index})">Chấp nhận</button></td>
                         <td><button onclick="rejectStudent(${index})">Từ chối</button></td>
                     `;
-                    pendingRequests.appendChild(studentDiv);
+                    pendingRequests.prepend(studentDiv);
                 }
             });
         }
@@ -133,7 +133,7 @@
 
 
         function approveStudent(index) {
-            const xacNhan = confirm("Bạn có chắc chắn muốn chấp nhận sinh viên điền lại phiếu không?");
+            const xacNhan = confirm("Xác nhận duyệt sinh viên ?");
             if (xacNhan){
                 students[index].status = "accepted"; //thay đổi giá trị của status từ pending sang accepted hoặc rejected.
                 localStorage.setItem("students", JSON.stringify(students));

@@ -609,7 +609,8 @@
     </div>
 
     <!-- <script src="/assets/javascript/tintuc.js"></script> -->
-    <script src="/assets/javascript/test.js"></script>
+    <!-- <script src="/assets/javascript/test.js"></script> -->
+    <script src="/assets/javascript/test_1.js"></script>
     <script>
         window.onload = function(){
             const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
@@ -621,15 +622,15 @@
                 // Ẩn các liên kết đăng ký và đăng nhập
                 document.getElementById('dangnhap').style.display = 'none'; 
                 document.getElementById('thongtin1').innerText = '| Đăng xuất'
-                if (loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com")) {
-                    document.getElementById("button").style.display = 'flex';   
-                } else {
-                    document.getElementById("button").style.display = 'none';
-                }
+                // if (loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com")) {
+                //     document.getElementById("button").style.display = 'flex';   
+                // } else {
+                //     document.getElementById("button").style.display = 'none';
+                // }
             } else {
                 // Nếu chưa đăng nhập, hiển thị thông tin mặc định
                 document.getElementById("thongtin").innerText = ''; 
-                documnet.getElementById("thongtin1").innerText = '';
+                document.getElementById("thongtin1").innerText = '';
                 
             }
         }

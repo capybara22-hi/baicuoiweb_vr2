@@ -152,20 +152,20 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="./assets/html/tuyenSinh.html">Xét Tuyển</a>
+                    <a href="/assets/html/tuyenSinh.html">Xét Tuyển</a>
                     <ul class="menu_1">
                         <li class="menu_1-list">
-                            <a href="./assets/html/tuyenSinh.html">
+                            <a href="/assets/html/tuyenSinh.html">
                                 Xét tuyển
                             </a>
             
                         </li>
                     </ul>
                 </li>
-                <li><a href="./assets/html/quanlihoso.html">Quản lí hồ sơ</a>
+                <li><a href="/assets/html/quanlihoso.html">Quản lí hồ sơ</a>
                     <ul class="menu_1">
                         <li class="menu_1-list">
-                            <a href="./assets/html/tuyenSinh.html">
+                            <a href="/assets/html/quanlihoso.html">
                                 Quản lý hồ sơ 
                             </a>
                         </li>
@@ -180,7 +180,43 @@
     <div id="content">
         <div class="tintuc_tuyensinh">
             <h2>Tin tuyển sinh</h2>
-            <div id="postList"></div>
+            <div id="postList"></div> <!-- Hiển thị tin tuyển sinh khi admin đăng bài -->
+
+            <script>
+                // Lấy dữ liệu từ localStorage
+                let posts = JSON.parse(localStorage.getItem("posts")) || []; // Dùng "post" làm key để lấy dữ liệu
+
+                // Tìm phần tử postList
+                const postList = document.getElementById("postList");
+
+                // Hàm hiển thị danh sách bài viết
+                function displayPosts() {
+                    // Xóa nội dung cũ
+                    postList.innerHTML = "";
+
+                    // Duyệt qua từng bài viết và thêm vào HTML
+                    posts.forEach((post, index) => {
+                        const postHTML = `
+                            <div class="post">
+                                <img src="${post.image}" alt="Bài đăng">
+                                <div class="content">
+                                    <h3>${post.title}</h3>
+                                    <div class="date">
+                                    <i class="fa-regular fa-calendar-days"></i> ${post.date} 
+                                    <i class="fa-regular fa-clock"></i> ${post.time}
+                                    </div>
+                                    <p>${post.description}</p>
+                                </div>
+                            </div>
+                        `;
+                        postList.innerHTML += postHTML; // Thêm bài viết vào postList
+                    });
+                }
+
+                // Gọi hàm để hiển thị
+                displayPosts();
+            </script>
+
             <div class="block_tintuc">
                 <img src="./assets/img/img_tintuc/thongbaonhaphoc.png" alt="" class="fix-img">
                 <div class="tintuc">
@@ -313,7 +349,7 @@
             <h2>Tuyển sinh đại học</h2>
             <p>Trường Đại học Sư phạm Hà Nội là trường trọng điểm, đầu ngành trong hệ thống các trường sư phạm, là trung tâm lớn nhất về đào tạo giáo viên, nghiên cứu khoa học - đặc biệt là khoa học giáo dục - của cả nước. Sứ mạng của Trường là đào tạo nguồn nhân lực chất lượng cao có trình độ đại học và trên đại học, bồi dưỡng nhân tài cho hệ thống giáo dục quốc dân và xã hội; NCKH cơ bản, khoa học giáo dục và khoa học ứng dụng đạt trình độ tiên tiến; cung cấp dịch vụ giáo dục và khoa học công nghệ phục vụ sự nghiệp công nghiệp hoá, hiện đại hoá đất nước và hội nhập quốc tế...</p>
             <div class="button_dangki">
-                <a href="">Đăng kí tuyển sinh</a>
+                <a href="./assets/html/quanlihoso.html">Đăng kí tuyển sinh</a>
             </div>
             <div class="khoangtrong" style="height: 10px;"></div>
         </div>
@@ -427,6 +463,7 @@
             </div>
         </div>
     </div>
-    <script src="/assets/javascript/test.js"></script>
+    <!-- <script src="/assets/javascript/test.js"></script> -->
+    <script src="/assets/javascript/test_1.js"></script>
 </body>
 </html>
