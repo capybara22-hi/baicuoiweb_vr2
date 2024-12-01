@@ -126,20 +126,23 @@
         });
         localStorage.setItem("students", JSON.stringify(students)); // Lưu lại dữ liệu
 
-
+        // lấy thông tin từ người dùng đăng nhập
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null; 
+        const isAdmin = loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com");
 
         // Hiển thị danh sách đang chờ duyệt
         function displayPendingStudents() {
             pendingBody.innerHTML = ""; // Xóa nội dung cũ
+
             students.forEach((student, index) => {
                 if (student.status === "pending" || student.status === "yeucau") {
                     const row = document.createElement("tr");
-                    row.innerHTML = `
+                    row.innerHTML = ` 
                         <td>${index + 1}</td>
                         <td>${student.hoTen}</td>
                         <td>${student.email}</td>
                         <td>${student.sdt}</td>
-                        <td>${student.cccd}</td>
+                        <td>${maskCCCD(student.cccd)}</td>
                         <td>${student.ngaySinh}</td>
                         <td>${student.gioiTinh}</td>
                         <td>${student.diem10}</td>
@@ -147,8 +150,9 @@
                         <td>${student.diem12}</td>
                         <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
                         <td>${student.timestamp || "N/A"}</td> 
-                        <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
+                        ${isAdmin ? `<td></td>` : `<td><button onclick="updateStudent(${index})">Cập nhật</button></td>` }
                     `;
+
 
                     /*comment 
                     <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
@@ -160,7 +164,9 @@
                 }
             });
         }
-
+       
+        // Kiểm tra dữ liệu mẫu
+        console.log(loggedInUser); // Kiểm tra giá trị console khi chạy trang
 
         // Hiển thị danh sách đã được chấp nhận
         function displayAcceptedStudents() {
@@ -173,7 +179,7 @@
                         <td>${student.hoTen}</td>
                         <td>${student.email}</td>
                         <td>${student.sdt}</td>
-                        <td>${student.cccd}</td>
+                        <td>${maskCCCD(student.cccd)}</td>
                         <td>${student.ngaySinh}</td>
                         <td>${student.gioiTinh}</td>
                         <td>${student.diem10}</td>
@@ -197,9 +203,10 @@
             window.location.href = "./student-form.html"
         }
     
-        
-        
-
+        function maskCCCD(cccd){
+            return cccd.substring(0,5) + "*****" + cccd.substring(cccd.length -3 );
+        }
+       
         // Gọi các hàm hiển thị
         displayPendingStudents();
         displayAcceptedStudents();

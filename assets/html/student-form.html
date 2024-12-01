@@ -210,8 +210,31 @@
 </div>
 
 <script>
+
+   
+
     document.getElementById("studentForm").addEventListener("submit", function(e) {
         e.preventDefault();
+
+        // Lấy thông tin người dùng hiện tại 
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")) || null; 
+
+        // Kiểm tra người dùng đăng nhập hay chưa
+        if(!loggedInUser){
+            alert("Vui lòng đăng nhập tài khoản");
+            return;
+        }
+
+        // lấy danh sách học sinh từ localStorage 
+        const students = JSON.parse(localStorage.getItem("students")) || [];
+
+        // Kiểm tra người dùng hiện tại đã gửi phiếu chưa 
+        const ktr = students.some(student => student.email === loggedInUser.email || student.cccd === document.getElementById("cccd").value); 
+
+        if(ktr){
+            alert("Bạn đã gửi phiếu đăng kí trước đó. Mỗi tài khoản chỉ được gửi một phiếu. ");
+            return; 
+        }
         const newStudent ={ 
             hoTen : document.getElementById("hoTen").value,
             email : document.getElementById("email").value,
@@ -227,7 +250,6 @@
         
         }
        
-        const students = JSON.parse(localStorage.getItem("students")) || [];
         students.push(newStudent);
         localStorage.setItem("students", JSON.stringify(students));
         alert("Đã gửi phiếu đăng ký thành công!");
