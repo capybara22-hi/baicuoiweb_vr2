@@ -73,30 +73,32 @@ document.addEventListener("DOMContentLoaded", () => {
       
       let dang_bai = document.getElementById('submit_btn');
 
+      if (selectedImage && title && description) {
+        const now = new Date();
+        const date = now.toLocaleDateString(); // Lấy phần ngày
+        const time = now.toLocaleTimeString(); // Lấy phần giờ
+
+  
+        const newPost = { image: selectedImage, title, date, time, description };
+        const posts = getPosts();
+        posts.unshift(newPost);
+        savePosts(posts);
+        renderPosts();
+  
+        postForm.reset(); // Reset form sau khi đăng bài
+        selectableImages.forEach((img) => img.classList.remove("selected")); // Bỏ chọn ảnh
+        selectedImage = null;
+        modal_nhap_tin.style.display = 'none';
+        alert("Đăng tin thành công !");
+      } else {
+        alert("Vui lòng chọn ảnh và điền đầy đủ thông tin!");
+      }
       // Khi nhấn nút đăng bài thì hiển thị thông báo đăng bài thành công
-      dang_bai.addEventListener('click', () => {
+      // dang_bai.addEventListener('click', () => {
+      //   modal_nhap_tin.style.display = 'none';
+      //   alert("Đăng tin thành công !");
           
-          if (selectedImage && title && description) {
-            const now = new Date();
-            const date = now.toLocaleDateString(); // Lấy phần ngày
-            const time = now.toLocaleTimeString(); // Lấy phần giờ
-    
-      
-            const newPost = { image: selectedImage, title, date, time, description };
-            const posts = getPosts();
-            posts.unshift(newPost);
-            savePosts(posts);
-            renderPosts();
-      
-            postForm.reset(); // Reset form sau khi đăng bài
-            selectableImages.forEach((img) => img.classList.remove("selected")); // Bỏ chọn ảnh
-            selectedImage = null;
-            modal_nhap_tin.style.display = 'none';
-            alert("Đăng tin thành công !");
-          } else {
-            alert("Vui lòng chọn ảnh và điền đầy đủ thông tin!");
-          }
-      });
+      // });
   
     });
   

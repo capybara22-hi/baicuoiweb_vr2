@@ -15,6 +15,16 @@
     <title>Trang chủ</title>
 </head>
 <body>
+    <div class="navbar_fixed" id="header_fixed">
+        <ul class="list_menu">
+            <li><a href="/index.html"><i class="fa-solid fa-house house_icon"></i>Trang chủ</a></li>
+            <li><a href="/assets/html/daotao.html">Đào tạo</a></li>
+            <li><a href="/assets/html/tintuc.html">Tin tức</a></li>
+            <li><a href="/assets/html/diemchuan.html">Điểm chuẩn</a></li>
+            <li><a href="/assets/html/tuyenSinh.html">Xét tuyển</a></li>
+            <li><a href="/assets/html/quanlihoso.html">Quản lí hồ sơ</a></li>
+        </ul>
+    </div>
     <header>
         <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
          <div id="header_contact">
@@ -170,6 +180,7 @@
     <div id="content">
         <div class="tintuc_tuyensinh">
             <h2>Tin tuyển sinh</h2>
+            <div id="postList"></div>
             <div class="block_tintuc">
                 <img src="./assets/img/img_tintuc/thongbaonhaphoc.png" alt="" class="fix-img">
                 <div class="tintuc">
@@ -384,6 +395,38 @@
         </div>
 
     </footer>
-
+    <div id="modal" class="background_dang_tin">
+        <div class="block_dang_tin">
+            <h2>Đăng Tin Tuyển Sinh</h2>
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <div id="adminSection" style="display: none;"> <!-- style="display: none;" -->
+                <!-- <h2>Đăng Tin Tuyển Sinh</h2> -->
+                <form id="postForm">
+                    <h3>Nhập tiêu đề của bài đăng: </h3>
+                    <input type="text" id="postTitle" placeholder="Tiêu đề bài đăng" required>
+                    <h3>Nhập mô tả của bài đăng: </h3>
+                    <textarea id="postDescription" placeholder="Mô tả bài đăng (tối đa 50 từ)" required></textarea>
+                    <h3>Chọn ảnh đại diện cho bài đăng: </h3>
+                    <div id="imageSelectionWrapper">
+                        <button type="button" id="toggleImageSelection">Chọn Ảnh</button>
+                        <div id="imageSelection" style="display: none;"> <!-- style="display: none;" -->
+                            <p style="margin-bottom: 20px;">Chọn ảnh:</p>
+                            <div class="image-options">
+                                <img src="/assets/img/img_tintuc/thongbao.png" alt="Ảnh 1" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/kithi.jpg" alt="Ảnh 2" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/thongbaonhaphoc.png" alt="Ảnh 3" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/hoatdongchung_2.jpg" alt="Ảnh 4" class="selectable-image">
+                                <img src="/assets/img/img_tintuc/thongtin_2.jpg" alt="Ảnh 5" class="selectable-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="submit" class="submit_btn" id="submit_btn">Đăng bài</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/javascript/test.js"></script>
 </body>
 </html>
