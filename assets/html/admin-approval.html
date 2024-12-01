@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Phiếu Đăng Ký</title>
+    <link rel="stylesheet" href="/assets/css/style_header.css">
     <style type="text/css">
+        .quaylai{
+            display: flex;
+            justify-content: flex-end;
+        }
         .quaylai button{
             width: 100px ;
             height: 60px ;
@@ -41,12 +46,13 @@
 
         th,
         td {
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #1e3a8a;
-            text-align: left;
+            text-align: center;
         }
 
         th {
+            font-size: 13px;
             background-color: #1e40af;
             color: #ffffff;
         }
@@ -54,10 +60,263 @@
         td {
             background-color: #ffffff;
         }
+        footer{
+        width: 100% ;
+        background-color: #07184a;
+        height: 400px;
+        margin-top: 30px ;
+        padding: 0px 70px ;
+        padding-top: 57px;
+
+        }
+        footer .top{
+            display: flex;
+            height: 300px;
+            justify-content: space-around;
+
+        }
+        footer .box{
+            width: 480px;
+            color :#fff; 
+            text-align: center;
+
+        }
+        footer .box .logo{
+            margin-bottom: 15px;
+        }
+        footer .box .logo p.p1{
+            margin-top: 5px ;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        footer .box .logo p.p2{
+            font-size: 13px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        footer .box .logo img{
+            width: 270px ;
+            height: 120px ;
+            box-shadow: 0 0 15px 0 rgba(134, 131, 131, 0.458);
+            /* border-radius: 15px ; */
+        }
+        .logo .inf{
+            width: 280px;
+            margin: 20px auto;
+            padding-left:20px ;
+
+        
+        }
+        footer .box .logo .inf .item{
+            display: flex;
+            margin-top: 8px;
+        }
+        footer .box .logo .inf .item p {
+        margin-left: 8px;
+        font-size: 14px;
+        }
+        footer .box1{
+            width: 300px;   
+            text-align: left;
+            margin: 28px auto;
+
+        }
+        footer .box1 .quick-menu{
+            margin-top: 20px ;
+        }
+        footer .box1 .quick-menu .item{
+            margin-left: 3px;
+            margin-bottom: 12px;
+            
+        }
+        footer .box1 h3{
+            font-size: 18px;
+            color:#ffffff9a;
+        }
+        footer .box1 .quick-menu .item a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        footer .box1 form input{
+            width: 294px ;
+            
+            height: 42px;
+            background: transparent;
+            padding-left: 20px;
+            color: #fff;
+            margin-top: 30px ;
+        }
+        footer .box1 form button{
+            background: #362f2f;
+            box-shadow: 5px 5px 4px rgba(0,0,0.25);
+            width: 163px;
+            height: 38px;
+            margin-top: 29px ;
+            color:#fff;
+        }
+        footer .buttom hr{
+            color: #ffffffa3;
+        }
+        footer .buttom p{
+            color: #ffffffa3;
+            text-align: center;
+            margin-top: 8px;
+        } 
     </style>
 </head>
 <body>
+    <header>
+        <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
+         <div id="header_contact">
+            <div class="block_infor">
+                <a href="">(028)37252001</a>
+                <span style="opacity: 0.3;">|</span>
+                <a href="">inf@hnue.edu.vn</a>
+            </div>
+            <div class="block_login">
+                <a href="">Bảng vàng thành tích</a>
+                <div id = "th">
+                    <div id="acount">
+                        <a href="#"><div id = "thongtin"></div></a>
+                        <a href="./dangki.html" id = "thongtin1"></a>
+                    </div>
+                    <a href="./dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
+                    
+                </div>
+                
+            </div>
+            <script>
+                window.onload = function(){
+                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+                    if (loggedInUser && loggedInUser.email) {
+                        // Hiển thị tên người dùng trong div thongtin
+                        document.getElementById('thongtin').innerText = loggedInUser.email; 
+                        // Ẩn các liên kết đăng ký và đăng nhập
+                        document.getElementById('dangnhap').style.display = 'none'; 
+                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
+                        
+                    } else {
+                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                        document.getElementById("thongtin").innerText = ''; 
+                        documnet.getElementById("thongtin1").innerText = '';
+                        
+                    }
+                }
+
+            </script>
+         </div>
+         <div style="width: 85%; margin: auto;">
+            <hr color="#0e2D80">
+         </div>
+
+        <!-- Phần logo trường, tên trường và slogan -->
+         <div id="header_slogan">
+                <div class="header_name">
+                    <!-- <div class="img_logo"> -->
+                        <img src="/assets/img/img_header/logo_blue.svg" alt="">
+                    <!-- </div> -->
+                    <div class="name_school">
+                        <h2>TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</h2>
+                        <h3>Hanoi National University of Education</h3>
+                    </div>
+                </div>
     
+                <div class="title">
+                    <h2>THÔNG TIN TUYỂN SINH NĂM 2024</h2>
+                </div>
+         </div>
+         <div style="width: 85%; margin: auto;">
+            <hr color="#0e2D80">
+         </div>
+         
+        <!-- Phần navigation -->
+         <div id="header_nav">
+            <ul class="menu">
+                <li>
+                    <a href="/index.html">Trang chủ</a>
+                    <ul class="menu_1">
+                        <li class="menu_1-list">
+                            <a href="">
+                                Tổng quan
+                                <ul class="menu_2 hover_1">
+                                    <li><a href="">Lịch sử truyền thống</a></li>
+                                    <li><a href="">Sứ mệnh, tầm nhìn và giá trị</a></li>
+                                    <li><a href="">Danh hiệu - Khen thưởng</a></li>
+                                    <li><a href="">Bản đồ trường</a></li>
+                                </ul>
+                            </a>
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+                        </li>
+                        <li class="menu_1-list">
+                            <a href="">
+                                Ba công khai
+                                <ul class="menu_2 hover_2">
+                                    <li><a href="">Chất lượng đào tạo</a></li>
+                                    <li><a href="">Cơ sở vật chất</a></li>
+                                    <li><a href="">Đội ngũ cán bộ</a></li>
+                                </ul>
+                            </a>
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+                        </li>
+                        <li><a href="">Cơ cấu tổ chức</a></li>
+                    </ul>
+                </li>
+                <a href="./daotao.html"><li>
+                    Đào tạo
+                    <ul class="menu_1">
+                        <li><a href="">Đào tạo Đại học</a></li>
+                        <li><a href="">Đào tạo Thạc sĩ</a></li>
+                        <li><a href="">Đào tạo Tiến sĩ</a></li>
+                        <li><a href="">Các ngành đào tạo</a></li>
+                    </ul>
+                </li></a>
+                <li>
+                    <a href="./tintuc.html">Tin tức</a>
+                    
+                    <ul class="menu_1">
+                        <li><a href="">Tin tuyển sinh</a></li>
+                        <li><a href="">Tin đào tạo</a></li>
+                        <li><a href="">Lịch công tác tuần</a></li>
+                        <li><a href="">Hoạt động chung</a></li>
+                        <li><a href="">Thông tin & Báo chí</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="./diemchuan.html">Điểm chuẩn</a>
+                 
+                    <ul class="menu_1">
+                        <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
+                        <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./tuyenSinh.html">Xét Tuyển</a>
+                    <ul class="menu_1">
+                        <li class="menu_1-list">
+                            <a href="./tuyenSinh.html">
+                                Xét tuyển
+                            </a>
+                            
+                        </li>
+                      
+                    </ul>
+                </li>
+                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a>
+                    <ul class="menu_1">
+                        <li class="menu_1-list">
+                            <a href="./quanlihoso.html">
+                                Quản lý hồ sơ 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+         </div>
+    </header>
     <div class="khoi1">
 
         <div class="boc"><h1>Quản Lý Phiếu Đăng Ký</h1></div>
@@ -70,9 +329,9 @@
                     <th>Số CMND/CCCD</th>
                     <th>Ngày sinh</th>
                     <th>Giới tính</th>
-                    <th>Điểm lớp 10</th>
-                    <th>Điểm lớp 11</th>
-                    <th>Điểm lớp 12</th>
+                    <th>Điểm TB 10</th>
+                    <th>Điểm TB 11</th>
+                    <th>Điểm TB 12</th>
                     <th>Yêu cầu điền lại</th>
                     <th>Chấp nhận</th>
                     <th>Từ chối</th>
@@ -86,6 +345,83 @@
                 <a href="./quanlihoso.html"><button>Quay lại</button></a>
         </div>
     </div>
+    <footer>
+        <div class="top">
+
+            <div class="box">
+                <div class="logo">
+                    <div class="img">
+                        <img src="/assets/img/su-pham.jpeg" alt="">
+                    </div>
+                    <p class = "p1">TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</p>
+                    <p class = "p2">Hanoi National University of Education</p>
+
+                    <div class="inf">
+                        <div class="item">
+                            <i class="fa-solid fa-location-dot"></i><p>136 Xuân Thủy - Cầu Giấy - Hà Nội</p>
+                        </div>
+                        <div class="item">
+                            <i class="fa-solid fa-phone"></i><p>024-37547823   fax: 024-37547971</p>
+                        </div>
+                        <div class="item">
+                            <i class="fa-solid fa-envelope"></i><p>p.hcdn@hnue.edu.vn</p>
+                        </div>
+                        <div class="item">
+                            <i class="fa-solid fa-building"></i><p>http://www.hnue.edu.vn</p>
+                        </div>
+                    </div>
+                    
+    
+                </div>
+            </div>
+            <div class="box1">
+                <h3>GIỚI THIỆU CHUNG </h3>
+                    <ul class = "quick-menu">
+                        <div class="item">
+                            <a href="">Tại sao nên chọn HNUE </a>
+                        </div>
+                        <div class="item">
+                            <a href="">Giới thiệu về trường</a>
+                        </div>
+                        <div class="item">
+                            <a href="">Các khoa & Trung tâm</a>
+                        </div>
+                        <div class="item">
+                            <a href="">Tìm đường đến HNUE</a>
+                        </div>
+                    </ul>    
+            </div>
+            <div class = "box1">
+                <h3>HỌC TẬP TẠI HNUE</h3>
+                <ul class = "quick-menu">
+                    <div class="item">
+                        <a href="">Đào tại Đại học </a>
+                    </div>
+                    <div class="item">
+                        <a href="">Đào tạo Sau Đại học</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Đào tạo - Bồi dưỡng</a>
+                    </div>
+                    <div class="item">
+                        <a href="">Học bổng - Học phí</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="box1">
+                <h3>LIÊN HỆ</h3>
+                <form action="">
+                    <input type="text" placeholder ="Địa chỉ email">
+                    <button> Nhập tin</button>
+                </form>
+            </div>
+        </div>
+        <div class="buttom">
+            <hr>
+            <p>Copyright 2024 by Trường Đại học Sư phạm Hà Nội</p>
+        </div>
+
+    </footer>
     <script>
 
         const adminAccount = {
