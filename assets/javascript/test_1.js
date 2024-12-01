@@ -38,15 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const postDiv = document.createElement("div");
         postDiv.className = "post";
   
+        
         postDiv.innerHTML = `
         <img src="${post.image}" alt="Bài đăng">
         <div class="content">
-            <h3>${post.title}</h3>
+            <a href="bai_dang_tin.html?index=${index}" target="_blank"><h3>${post.title}</h3></a> 
             <div class="date">
             <i class="fa-regular fa-calendar-days"></i> ${post.date} 
             <i class="fa-regular fa-clock"></i> ${post.time}
-            </div>
+            </div>  
             <p>${post.description}</p>
+            
         </div>
         ${temp ? `<button class="deleteButton" id="xoa_btn" data-index="${index}">Xóa</button>` : ""}
         `;
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const title = document.getElementById("postTitle").value.trim();
       const description = document.getElementById("postDescription").value.trim();
+      const content = document.getElementById('postContent').value;
       
       let dang_bai = document.getElementById('submit_btn');
 
@@ -92,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const time = now.toLocaleTimeString(); // Lấy phần giờ
 
   
-        const newPost = { image: selectedImage, title, date, time, description };
+        const newPost = { image: selectedImage, title, content, date, time, description };
         const posts = getPosts();
         posts.unshift(newPost);
         savePosts(posts);

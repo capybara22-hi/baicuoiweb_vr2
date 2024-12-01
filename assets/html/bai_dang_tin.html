@@ -1,28 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style_daotao.css">
+    <title>Chi Tiết Bài Viết</title>
     <link rel="stylesheet" href="/assets/css/style_header.css">
-    <link rel="stylesheet" href="/assets/css/style_tintuc.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Đào tạo</title>
+    <link rel="stylesheet" href="/assets/css/trangchu.css">
+    <style>
+        /* Reset các giá trị mặc định để hiển thị nhất quán */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Phần tử chứa bài viết */
+        #postDetail {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Tiêu đề bài viết */
+        #postDetail h1 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Ảnh đại diện */
+        #postDetail img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Nội dung bài viết */
+        #postDetail p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #555;
+            padding: 0 20px;
+        }
+
+        /* Hiệu ứng hover cho ảnh */
+        #postDetail img:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+    </style>
 </head>
 <body>
-    <div class="navbar_fixed" id="header_fixed">
-        <ul class="list_menu">
-            <li><a href="/index.html"><i class="fa-solid fa-house house_icon"></i>Trang chủ</a></li>
-            <li><a href="./daotao.html">Đào tạo</a></li>
-            <li><a href="./tintuc.html">Tin tức</a></li>
-            <li><a href="./diemchuan.html">Điểm chuẩn</a></li>
-            <li><a href="./tuyenSinh.html">Xét tuyển</a></li>
-            <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
-        </ul>
-    </div>
     <header>
-        <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
-         <div id="header_contact">
+        <div id="header_contact">
             <div class="block_infor">
                 <a href="">(028)37252001</a>
                 <span style="opacity: 0.3;">|</span>
@@ -44,7 +84,7 @@
                 window.onload = function(){
                     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
                     console.log(loggedInUser); // In ra để kiểm tra dữ liệu
-
+    
                     if (loggedInUser && loggedInUser.email) {
                         // Hiển thị tên người dùng trong div thongtin
                         document.getElementById('thongtin').innerText = loggedInUser.email; 
@@ -59,13 +99,13 @@
                         
                     }
                 }
-
+    
             </script>
          </div>
          <div style="width: 85%; margin: auto;">
             <hr color="#0e2D80">
          </div>
-
+    
         <!-- Phần logo trường, tên trường và slogan -->
          <div id="header_slogan">
                 <div class="header_name">
@@ -132,13 +172,13 @@
                     <ul class="menu_1">
                         <li><a href="./tintuc.html">Tin tuyển sinh</a></li>
                         <li><a href="./tintuc.html">Tin đào tạo</a></li>
-                        <li><a href="./tintuc.html">Lịch công tác tuần</a></li>
                         <li><a href="./tintuc.html">Hoạt động chung</a></li>
                         <li><a href="./tintuc.html">Thông tin & Báo chí</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="./diemchuan.html">Điểm chuẩn</a>                 
+                    <a href="./diemchuan.html">Điểm chuẩn</a>
+                 
                     <ul class="menu_1">
                         <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
                         <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
@@ -151,7 +191,6 @@
                             <a href="./tuyenSinh.html">
                                 Xét tuyển
                             </a>
-                       
                         </li>
                       
                     </ul>
@@ -168,56 +207,9 @@
             </ul>
          </div>
     </header>
-    <div id="slider">
-        <img src="/assets/img/img_slider/Ảnh chụp màn hình 2024-10-13 105603.png" alt="">
-    </div>
-    <div id="content">
-        <div class="block_content">
-            <div class="block_content_introduce">
-                <p>Trường Đại học Sư phạm Hà Nội có sứ mạng đào tạo nguồn nhân lực chất lượng cao, bồi dưỡng nhân tài cho hệ thống giáo dục quốc dân và toàn xã hội; nghiên cứu khoa học cơ bản, khoa học ứng dụng thuộc các lĩnh vực khoa học Tự nhiên, Xã hội và Nhân văn, Giáo dục đạt trình độ tiên tiến; cung cấp dịch vụ giáo dục và khoa học công nghệ phục vụ sự nghiệp công nghiệp hóa, hiện đại hóa đất nước và hội nhập quốc tế.</p>
-            </div>
-            <hr>
-            <div class="dao_tao">
-                <div class="img">
-                    <img src="/assets/img/img_content/daihoc.jpg" alt="">
-                </div>
-                <div class="text">
-                    <h2>Đào tạo Đại học</h2>
-                    <p>Đào tạo Đại học là nền tảng quan trọng giúp trang bị cho sinh viên kiến thức chuyên sâu và kỹ năng nghề nghiệp vững chắc. Với sứ mệnh đào tạo thế hệ trẻ, trường ĐH Sư Phạm Hà Nội luôn chú trọng cung cấp kiến thức cập nhật, thực tiễn, và phù hợp với yêu cầu của thị trường lao động.</p>
-                    <div class="btn_xem_them">
-                        <a href="#">Xem thêm</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="dao_tao">
-                <div class="img">
-                    <img src="/assets/img/img_content/thacsi.jpg" alt="">
-                </div>
-                <div class="text">
-                    <h2>Đào tạo Thạc sĩ</h2>
-                    <p>Đào tạo Thạc sĩ là bước tiến cao hơn trong giáo dục, dành cho những cá nhân muốn nâng cao kiến thức chuyên môn và phát triển kỹ năng nghiên cứu chuyên sâu. Các chương trình đào tạo thạc sĩ tập trung vào nghiên cứu chuyên sâu, phân tích các vấn đề phức tạp và tìm kiếm giải pháp thực tiễn cho các thách thức trong ngành.</p>
-                    <div class="btn_xem_them">
-                        <a href="#">Xem thêm</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="dao_tao">
-                <div class="img">
-                    <img src="/assets/img/img_content/tiensi.jpg" alt="">
-                </div>
-                <div class="text">
-                    <h2>Đào tạo Tiến sĩ</h2>
-                    <p>Đào tạo Tiến sĩ là đỉnh cao của giáo dục học thuật, dành cho những cá nhân có đam mê nghiên cứu chuyên sâu và mong muốn đóng góp vào tri thức của nhân loại. Chương trình đào tạo tiến sĩ chủ yếu tập trung vào nghiên cứu và phát triển lý thuyết, thường bao gồm quá trình xây dựng và bảo vệ luận án tiến sĩ.</p>
-                    <div class="btn_xem_them">
-                        <a href="./index.html">Xem thêm</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
+
+    <div id="postDetail"></div>
+
     <footer>
         <div class="top">
 
@@ -295,6 +287,27 @@
         </div>
 
     </footer>
-    <script src="/assets/javascript/test_1.js"></script>
+    <script>
+        // Lấy chỉ số bài viết từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postIndex = urlParams.get('index');
+
+        // Lấy bài viết từ localStorage
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        const post = posts[postIndex];
+
+        // Hiển thị bài viết
+        if (post) {
+            document.title = post.title; // Thay đổi title của thẻ head giống như title của bài đăng tin
+
+            document.getElementById('postDetail').innerHTML = `
+                <h1>${post.title}</h1>
+                <img src="${post.image}" alt="Ảnh đại diện">
+                <p>${post.content}</p>
+            `;
+        } else {
+            document.getElementById('postDetail').innerHTML = '<p>Bài viết không tồn tại.</p>';
+        }
+    </script>
 </body>
-</html> 
+</html>

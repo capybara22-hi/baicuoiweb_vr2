@@ -20,155 +20,153 @@
             <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
         </ul>
     </div>
-    <header>
-        <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
-         <div id="header_contact">
-            <div class="block_infor">
-                <a href="">(028)37252001</a>
-                <span style="opacity: 0.3;">|</span>
-                <a href="">inf@hnue.edu.vn</a>
-            </div>
-            <div class="block_login">
-                <a href="">Bảng vàng thành tích</a>
-                <div id = "th">
-                    <div id="acount">
-                        <a href="#"><div id = "thongtin"></div></a>
-                        <a href="./dangki.html" id = "thongtin1"></a>
-                    </div>
-                    <a href="./dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
-                    
+    <!-- Phần thông tin liên lạc và đăng nhập/đăng ký -->
+<header>
+    <div id="header_contact">
+        <div class="block_infor">
+            <a href="">(028)37252001</a>
+            <span style="opacity: 0.3;">|</span>
+            <a href="">inf@hnue.edu.vn</a>
+        </div>
+        <div class="block_login">
+            <a href="">Bảng vàng thành tích</a>
+            <div id = "th">
+                <div id="acount">
+                    <a href="#"><div id = "thongtin"></div></a>
+                    <a href="./dangki.html" id = "thongtin1"></a>
                 </div>
+                <a href="./dangki.html" id = "dangnhap">Đăng nhập / Đăng kí</a>
                 
             </div>
-            <script>
-                window.onload = function(){
-                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
-                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+            
+        </div>
+        <script>
+            window.onload = function(){
+                const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+                console.log(loggedInUser); // In ra để kiểm tra dữ liệu
 
-                    if (loggedInUser && loggedInUser.email) {
-                        // Hiển thị tên người dùng trong div thongtin
-                        document.getElementById('thongtin').innerText = loggedInUser.email; 
-                        // Ẩn các liên kết đăng ký và đăng nhập
-                        document.getElementById('dangnhap').style.display = 'none'; 
-                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
-                        
-                    } else {
-                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
-                        document.getElementById("thongtin").innerText = ''; 
-                        documnet.getElementById("thongtin1").innerText = '';
-                        
-                    }
-                }
-
-            </script>
-         </div>
-         <div style="width: 85%; margin: auto;">
-            <hr color="#0e2D80">
-         </div>
-
-        <!-- Phần logo trường, tên trường và slogan -->
-         <div id="header_slogan">
-                <div class="header_name">
-                    <!-- <div class="img_logo"> -->
-                        <img src="/assets/img/img_header/logo_blue.svg" alt="">
-                    <!-- </div> -->
-                    <div class="name_school">
-                        <h2>TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</h2>
-                        <h3>Hanoi National University of Education</h3>
-                    </div>
-                </div>
-    
-                <div class="title">
-                    <h2>THÔNG TIN TUYỂN SINH NĂM 2024</h2>
-                </div>
-         </div>
-         <div style="width: 85%; margin: auto;">
-            <hr color="#0e2D80">
-         </div>
-         
-        <!-- Phần navigation -->
-         <div id="header_nav">
-            <ul class="menu">
-                <li>
-                    <a href="/index.html">Trang chủ</a>
-                    <ul class="menu_1">
-                        <li class="menu_1-list">
-                            <a href="">
-                                Tổng quan
-                                <ul class="menu_2 hover_1">
-                                    <li><a href="">Lịch sử truyền thống</a></li>
-                                    <li><a href="">Sứ mệnh, tầm nhìn và giá trị</a></li>
-                                    <li><a href="">Danh hiệu - Khen thưởng</a></li>
-                                    <li><a href="">Bản đồ trường</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li class="menu_1-list">
-                            <a href="">
-                                Ba công khai
-                                <ul class="menu_2 hover_2">
-                                    <li><a href="">Chất lượng đào tạo</a></li>
-                                    <li><a href="">Cơ sở vật chất</a></li>
-                                    <li><a href="">Đội ngũ cán bộ</a></li>
-                                </ul>
-                            </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
-                        </li>
-                        <li><a href="">Cơ cấu tổ chức</a></li>
-                    </ul>
-                </li>
-                <a href="./daotao.html"><li>
-                    Đào tạo
-                    <ul class="menu_1">
-                        <li><a href="">Đào tạo Đại học</a></li>
-                        <li><a href="">Đào tạo Thạc sĩ</a></li>
-                        <li><a href="">Đào tạo Tiến sĩ</a></li>
-                        <li><a href="">Các ngành đào tạo</a></li>
-                    </ul>
-                </li></a>
-                <li>
-                    <a href="./tintuc.html">Tin tức</a>
+                if (loggedInUser && loggedInUser.email) {
+                    // Hiển thị tên người dùng trong div thongtin
+                    document.getElementById('thongtin').innerText = loggedInUser.email; 
+                    // Ẩn các liên kết đăng ký và đăng nhập
+                    document.getElementById('dangnhap').style.display = 'none'; 
+                    document.getElementById('thongtin1').innerText = '| Đăng xuất'
                     
-                    <ul class="menu_1">
-                        <li><a href="">Tin tuyển sinh</a></li>
-                        <li><a href="">Tin đào tạo</a></li>
-                        <li><a href="">Lịch công tác tuần</a></li>
-                        <li><a href="">Hoạt động chung</a></li>
-                        <li><a href="">Thông tin & Báo chí</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="./diemchuan.html">Điểm chuẩn</a>
-                 
-                    <ul class="menu_1">
-                        <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
-                        <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="./tuyenSinh.html">Xét Tuyển</a>
-                    <ul class="menu_1">
-                        <li class="menu_1-list">
-                            <a href="">
-                                Xét tuyển
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </li>
-                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a>
-                    <ul class="menu_1">
-                        <li class="menu_1-list">
-                            <a href="./quanlihoso.html">
-                                Quản lý hồ sơ 
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-         </div>
-    </header>
+                } else {
+                    // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                    document.getElementById("thongtin").innerText = ''; 
+                    documnet.getElementById("thongtin1").innerText = '';
+                    
+                }
+            }
+
+        </script>
+     </div>
+     <div style="width: 85%; margin: auto;">
+        <hr color="#0e2D80">
+     </div>
+
+    <!-- Phần logo trường, tên trường và slogan -->
+     <div id="header_slogan">
+            <div class="header_name">
+                <!-- <div class="img_logo"> -->
+                    <img src="/assets/img/img_header/logo_blue.svg" alt="">
+                <!-- </div> -->
+                <div class="name_school">
+                    <h2>TRƯỜNG ĐẠI HỌC SƯ PHẠM HÀ NỘI</h2>
+                    <h3>Hanoi National University of Education</h3>
+                </div>
+            </div>
+
+            <div class="title">
+                <h2>THÔNG TIN TUYỂN SINH NĂM 2024</h2>
+            </div>
+     </div>
+     <div style="width: 85%; margin: auto;">
+        <hr color="#0e2D80">
+     </div>
+     
+    <!-- Phần navigation -->
+     <div id="header_nav">
+        <ul class="menu">
+            <li>
+                <a href="/index.html">Trang chủ</a>
+                <ul class="menu_1">
+                    <li class="menu_1-list">
+                        <a href="">
+                            Tổng quan
+                            <ul class="menu_2 hover_1">
+                                <li><a href="https://hnue.edu.vn/gioithieu/lichsutruyenthong">Lịch sử truyền thống</a></li>
+                                <li><a href="https://hnue.edu.vn/gioithieu/sumangvatamnhin">Sứ mệnh, tầm nhìn và giá trị</a></li>
+                                <li><a href="">Danh hiệu - Khen thưởng</a></li>
+                                <li><a href="https://hnuemapforyou.netlify.app/login.html">Bản đồ trường</a></li>
+                            </ul>
+                        </a>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </li>
+                    <li class="menu_1-list">
+                        <a href="">
+                            Ba công khai
+                            <ul class="menu_2 hover_2">
+                                <li><a href="">Chất lượng đào tạo</a></li>
+                                <li><a href="https://hnue.edu.vn/gioithieu/cosovatchat">Cơ sở vật chất</a></li>
+                                <li><a href="https://hnue.edu.vn/gioithieu/DoiNguCanBo">Đội ngũ cán bộ</a></li>
+                            </ul>
+                        </a>
+                        <i class="fa-solid fa-chevron-right arrow"></i>
+                    </li>
+                    <li><a href="https://hnue.edu.vn/gioithieu/cocautochuc">Cơ cấu tổ chức</a></li>
+                </ul>
+            </li>
+            <a href="./daotao.html"><li>
+                Đào tạo
+                <ul class="menu_1">
+                    <li><a href="./daotao.html">Đào tạo Đại học</a></li>
+                    <li><a href="./daotao.html">Đào tạo Thạc sĩ</a></li>
+                    <li><a href="./daotao.html">Đào tạo Tiến sĩ</a></li>
+                </ul>
+            </li></a>
+            <li>
+                <a href="./tintuc.html">Tin tức</a>
+                
+                <ul class="menu_1">
+                    <li><a href="./tintuc.html">Tin tuyển sinh</a></li>
+                    <li><a href="./tintuc.html">Tin đào tạo</a></li>
+                    <li><a href="./tintuc.html">Hoạt động chung</a></li>
+                    <li><a href="./tintuc.html">Thông tin & Báo chí</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="./diemchuan.html">Điểm chuẩn</a>
+             
+                <ul class="menu_1">
+                    <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
+                    <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="./tuyenSinh.html">Xét Tuyển</a>
+                <ul class="menu_1">
+                    <li class="menu_1-list">
+                        <a href="./tuyenSinh.html">
+                            Xét tuyển
+                        </a>
+                    </li>
+                  
+                </ul>
+            </li>
+            <li><a href="./quanlihoso.html">Quản lí hồ sơ</a>
+                <ul class="menu_1">
+                    <li class="menu_1-list">
+                        <a href="./quanlihoso.html">
+                            Quản lý hồ sơ 
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+     </div>
+</header>
     <main>
         <div class="container-top">
             <div class="wrapper">
@@ -482,16 +480,16 @@
                 <h3>GIỚI THIỆU CHUNG </h3>
                     <ul class = "quick-menu">
                         <div class="item">
-                            <a href="">Tại sao nên chọn HNUE </a>
+                            <a href="https://hnue.edu.vn/gioithieu/sumangvatamnhin">Tại sao nên chọn HNUE </a>
                         </div>
                         <div class="item">
-                            <a href="">Giới thiệu về trường</a>
+                            <a href="https://hnue.edu.vn/Gi%E1%BB%9Bi-thi%E1%BB%87u">Giới thiệu về trường</a>
                         </div>
                         <div class="item">
-                            <a href="">Các khoa & Trung tâm</a>
+                            <a href="https://staff.hnue.edu.vn/Gioithieu/Donvithuoctruong.aspx">Các khoa & Trung tâm</a>
                         </div>
                         <div class="item">
-                            <a href="">Tìm đường đến HNUE</a>
+                            <a href="https://hnue.edu.vn/lienhe">Tìm đường đến HNUE</a>
                         </div>
                     </ul>    
             </div>
@@ -499,16 +497,16 @@
                 <h3>HỌC TẬP TẠI HNUE</h3>
                 <ul class = "quick-menu">
                     <div class="item">
-                        <a href="">Đào tại Đại học </a>
+                        <a href="https://tuyensinh.hnue.edu.vn/nganh-dao-tao">Đào tại Đại học </a>
                     </div>
                     <div class="item">
-                        <a href="">Đào tạo Sau Đại học</a>
+                        <a href="https://sdh.hnue.edu.vn/">Đào tạo Sau Đại học</a>
                     </div>
                     <div class="item">
-                        <a href="">Đào tạo - Bồi dưỡng</a>
+                        <a href="https://tuyensinh.hnue.edu.vn/nganh-dao-tao">Đào tạo - Bồi dưỡng</a>
                     </div>
                     <div class="item">
-                        <a href="">Học bổng - Học phí</a>
+                        <a href="https://dtdh.hnue.edu.vn/">Học bổng - Học phí</a>
                     </div>
                 </ul>
             </div>
@@ -528,6 +526,6 @@
     </footer>
 
     <script src="/assets/javascript/diemchuan.js"></script>
-    <script src="/assets/javascript/test.js"></script>
+    <script src="/assets/javascript/test_1.js"></script>
 </body>
 </html>
