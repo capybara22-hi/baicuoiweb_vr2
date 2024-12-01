@@ -58,9 +58,10 @@
 
         th,
         td {
-            padding: 12px;
+            padding: 6px;
             border: 1px solid #1e3a8a;
             text-align: left;
+            font-size: 14px;
         }
 
         th {
@@ -489,7 +490,7 @@
                         <td>${student.diem12}</td>
                         <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
                         <td>${student.timestamp || "N/A"}</td> 
-                        ${isAdmin ? `<td></td>` : `<td><button onclick="updateStudent(${index})">Cập nhật</button></td>` }
+                        ${loggedInUser && loggedInUser.email === student.email ? `<td><button onclick="updateStudent(${index})">Cập nhật</button></td>` : `<td></td>`}
                     `;
 
 
