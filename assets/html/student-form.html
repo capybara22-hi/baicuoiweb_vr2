@@ -61,9 +61,7 @@
             margin-bottom: 2px;
         }
 
-        input , select {
-            /* width:170px; */
-        }
+       
         fieldset .khoicon{
             display: flex; 
             margin-bottom: 10px;
@@ -214,35 +212,26 @@
 <script>
     document.getElementById("studentForm").addEventListener("submit", function(e) {
         e.preventDefault();
+        const newStudent ={ 
+            hoTen : document.getElementById("hoTen").value,
+            email : document.getElementById("email").value,
+            sdt : document.getElementById("sdt").value,
+            cccd : document.getElementById("cccd").value,
+            ngaySinh : document.getElementById("ngaySinh").value,
+            gioiTinh : document.querySelector('input[name="gioiTinh"]:checked').value,
+            diem10 : document.getElementById("diem10").value,
+            diem11 : document.getElementById("diem11").value,
+            diem12 : document.getElementById("diem12").value,
+            status: "pending", 
+            timestamp : new Date().toLocaleString()
         
-        const hoTen = document.getElementById("hoTen").value;
-        const email = document.getElementById("email").value;
-        const sdt = document.getElementById("sdt").value;
-        const cccd = document.getElementById("cccd").value;
-        const ngaySinh = document.getElementById("ngaySinh").value;
-        const gioiTinh = document.querySelector('input[name="gioiTinh"]:checked').value;
-        const diem10 = document.getElementById("diem10").value;
-        const diem11 = document.getElementById("diem11").value;
-        const diem12 = document.getElementById("diem12").value;
-
+        }
+       
         const students = JSON.parse(localStorage.getItem("students")) || [];
-        
-        students.push({
-            hoTen,
-            email,
-            sdt,
-            cccd,
-            ngaySinh,
-            gioiTinh,
-            diem10,
-            diem11,
-            diem12,
-            status: "pending"
-        });
-        
+        students.push(newStudent);
         localStorage.setItem("students", JSON.stringify(students));
         alert("Đã gửi phiếu đăng ký thành công!");
-        e.target.reset();
+        window.location.href = "./quanlihoso.html"
     });
 </script>
 

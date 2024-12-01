@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/assets/css/style_tintuc.css">
     <link rel="stylesheet" href="/assets/css/style_header.css">
     <link rel="stylesheet" href="/assets/css/style_daotao.css">
+    
 </head>
 <body>
     <!-- <div id="header" style="width: 100%; height: 150px; text-align: center; line-height: 150px; border-bottom: 2px solid blue;">
@@ -44,27 +45,7 @@
                 </div>
                 
             </div>
-            <script>
-                window.onload = function(){
-                    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
-                    console.log(loggedInUser); // In ra để kiểm tra dữ liệu
-
-                    if (loggedInUser && loggedInUser.email) {
-                        // Hiển thị tên người dùng trong div thongtin
-                        document.getElementById('thongtin').innerText = loggedInUser.email; 
-                        // Ẩn các liên kết đăng ký và đăng nhập
-                        document.getElementById('dangnhap').style.display = 'none'; 
-                        document.getElementById('thongtin1').innerText = '| Đăng xuất'
-                        
-                    } else {
-                        // Nếu chưa đăng nhập, hiển thị thông tin mặc định
-                        document.getElementById("thongtin").innerText = ''; 
-                        documnet.getElementById("thongtin1").innerText = '';
-                        
-                    }
-                }
-
-            </script>
+            
          </div>
          <div style="width: 85%; margin: auto;">
             <hr color="#0e2D80">
@@ -234,6 +215,7 @@
                             margin: 10px 0;
                         }
                     </style>
+                 
                 </div>
                 <div id="postList"></div> <!-- Div trống để thêm phần tin tức vào -->
                 <div class="block_tintuc">
@@ -628,5 +610,30 @@
 
     <!-- <script src="/assets/javascript/tintuc.js"></script> -->
     <script src="/assets/javascript/test.js"></script>
+    <script>
+        window.onload = function(){
+            const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser')); 
+            console.log(loggedInUser); // In ra để kiểm tra dữ liệu
+
+            if (loggedInUser && loggedInUser.email) {
+                // Hiển thị tên người dùng trong div thongtin
+                document.getElementById('thongtin').innerText = loggedInUser.email; 
+                // Ẩn các liên kết đăng ký và đăng nhập
+                document.getElementById('dangnhap').style.display = 'none'; 
+                document.getElementById('thongtin1').innerText = '| Đăng xuất'
+                if (loggedInUser && (loggedInUser.email === "cao@gmail.com" || loggedInUser.email === "tuan@gmail.com")) {
+                    document.getElementById("button").style.display = 'flex';   
+                } else {
+                    document.getElementById("button").style.display = 'none';
+                }
+            } else {
+                // Nếu chưa đăng nhập, hiển thị thông tin mặc định
+                document.getElementById("thongtin").innerText = ''; 
+                documnet.getElementById("thongtin1").innerText = '';
+                
+            }
+        }
+        
+    </script>
 </body>
 </html>

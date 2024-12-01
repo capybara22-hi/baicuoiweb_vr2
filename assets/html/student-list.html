@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh Sách Sinh Viên</title>
-    <link rel="stylesheet" href="">
     <style type="text/css">
         .quaylai button {
             width: 100px;
@@ -120,18 +119,18 @@
         const pendingBody = document.getElementById("pendingBody");
         // Khi tạo hoặc cập nhật sinh viên, thêm timestamp
         
-        // Giả sử sinh viên mới được tạo ở đây
-        function addStudent(newStudent) {
-            newStudent.timestamp = new Date().toLocaleString();  // Thêm timestamp hiện tại
-            students.push(newStudent);                           // Thêm vào mảng students
-            localStorage.setItem("students", JSON.stringify(students)); // Cập nhật localStorage
-        }
+        students.forEach(student => {
+            if (!student.timestamp) {
+                student.timestamp = new Date().toLocaleString(); // Thêm timestamp cho dữ liệu cũ
+            }
+        });
+        localStorage.setItem("students", JSON.stringify(students)); // Lưu lại dữ liệu
+
 
 
         // Hiển thị danh sách đang chờ duyệt
         function displayPendingStudents() {
             pendingBody.innerHTML = ""; // Xóa nội dung cũ
-            
             students.forEach((student, index) => {
                 if (student.status === "pending" || student.status === "yeucau") {
                     const row = document.createElement("tr");
@@ -147,7 +146,7 @@
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
                         <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
-                        <td>${student.timestamp || "N/A"}</td> <!-- Thêm thời gian -->
+                        <td>${student.timestamp || "N/A"}</td> 
                         <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
                     `;
 
@@ -180,7 +179,7 @@
                         <td>${student.diem10}</td>
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
-                        <td>${student.timestamp || "N/A"}</td> <!-- Thêm thời gian -->
+                        <td>${student.timestamp || "N/A"}</td> 
                        
                     `;
                     tableBody.appendChild(row);

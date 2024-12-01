@@ -118,25 +118,43 @@
             });
         }
 
-        function yeucauStudent(index){
-            students[index].status = "yeucau"; // Cập nhật trạng thái
-            localStorage.setItem("students", JSON.stringify(students)); // Cập nhật vào localStorage
-            updateRequests(); // Cập nhật giao diện trang admin
-            alert("Yêu cầu Sinh viên điền lại phiếu");
+        function yeucauStudent(index) {
+            // Hiển thị hộp thoại xác nhận
+            const xacNhan = confirm("Bạn có chắc chắn muốn yêu cầu sinh viên điền lại phiếu không?");
+            if (xacNhan) {  // Nếu người dùng bấm "OK"
+                students[index].status = "yeucau";  // Cập nhật trạng thái
+                localStorage.setItem("students", JSON.stringify(students));  // Lưu lại vào localStorage
+                updateRequests();  // Cập nhật giao diện trang admin
+                alert("Đã gửi yêu cầu cho sinh viên điền lại phiếu!");
+            } else {  // Nếu người dùng bấm "Cancel"
+                alert("Yêu cầu đã bị hủy.");
+            }
         }
 
+
         function approveStudent(index) {
-            students[index].status = "accepted"; //thay đổi giá trị của status từ pending sang accepted hoặc rejected.
-            localStorage.setItem("students", JSON.stringify(students));
-            updateRequests(); // ẩn thông tin trên màn hình 
-            alert("Phiếu đã được chấp nhận.");
+            const xacNhan = confirm("Bạn có chắc chắn muốn chấp nhận sinh viên điền lại phiếu không?");
+            if (xacNhan){
+                students[index].status = "accepted"; //thay đổi giá trị của status từ pending sang accepted hoặc rejected.
+                localStorage.setItem("students", JSON.stringify(students));
+                updateRequests(); // ẩn thông tin trên màn hình 
+                alert("Phiếu đã được chấp nhận.");
+            } else{
+                alert("Chấp nhận bị hủy")
+            }
         }
 
         function rejectStudent(index) {
-            students[index].status = "rejected";
-            localStorage.setItem("students", JSON.stringify(students));
-            updateRequests();
-            alert("Phiếu đã bị từ chối.");
+            const xacNhan = confirm("Bạn có chắc chắn muốn xóa sinh viên điền lại phiếu không?");
+            if(xacNhan){
+                students[index].status = "rejected";
+                localStorage.setItem("students", JSON.stringify(students));
+                updateRequests();
+                alert("Phiếu đã xóa.");
+            } else{
+                alert("Chấp nhậ bị hủy")
+
+            }
         }
         
 
