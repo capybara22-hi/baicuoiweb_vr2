@@ -244,11 +244,11 @@ main .right{
     width: 250px;
     height: 300px;
     position: relative;
-    background-color:#b7b5ba ;
+    background-color:var(--menu--color) ;
 }
 .video-container video{
     width: 100%;
-    border: 10px solid #b7b5ba ;
+    border: 10px solid  var(--menu--color) ;
     height: 200px;
     object-fit: cover ;
 
@@ -277,6 +277,88 @@ main .right{
     margin: 20px auto;
 }
 
+
+main .main-bottom{
+    width: 100%;
+
+    margin-top: 40px;
+
+}
+main .main-bottom .khampha{ 
+    text-align: center;
+    font-size: 25px;
+    padding-top :20px ;
+    color: var(--secondary-dark-color);
+    
+    
+}
+
+
+main .main-bottom .khoilon{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+
+}
+.khampha .underline {
+    border-radius: 5px;
+    width: 150px; /* Chiều dài của đường gạch */
+    height: 5px; /* Độ dày của đường gạch */
+    background-color: var(--secondary-dark-color); /* Màu sắc của đường gạch */
+    margin: 5px auto; /* Canh giữa đường gạch */
+}
+main .main-bottom .khoilon .khoinho{
+    margin-right:5%;
+
+}
+
+main .main-bottom .khoilon .khoinho .img img{
+    width: 600px;
+    height: 400px;
+
+
+}
+main .main-bottom .khoilon .khoinho .doanvan{
+    width: 600px;
+    height: 200px;
+    background-color: var(--light-bg-color);
+    margin-top: -10px;
+    padding-left: 30px ;
+
+}
+main .main-bottom .khoilon .khoinho .doanvan:hover{
+    background-color: var(--light-text-color);
+    transition: 0.5s;
+    color: var(--light-bg-color);
+}
+
+main .main-bottom .khoilon .khoinho .doanvan .i1{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    color: var(--menu--color);
+
+}
+main .main-bottom .khoilon .khoinho .doanvan .i2{
+    padding-top: 20px;
+    width: 520px;
+
+}
+main .main-bottom .khoilon .khoinho .doanvan .i3 a{
+    margin-top: 15px;
+    display:flex;
+    font-size: 25px;
+    color: var(--blue-color);
+
+}
+main .main-bottom .khoilon .khoinho .doanvan .i3 :hover{
+    color: var(--primary-color);
+
+}
+.doanvan .i3 a i{
+    padding-left: 15px;
+    padding-top: 4px;
+}
 
 footer{
     width: 100% ;

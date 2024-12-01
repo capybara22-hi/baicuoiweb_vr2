@@ -204,7 +204,8 @@ section .box.active {
 
 
 /* CSS phần đăng tin  */
-.background_dang_tin {
+#modal, .confirm-modal {
+    display: none;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -212,10 +213,18 @@ section .box.active {
     right: 0;
     bottom: 0;
     background-color: rgb(0, 0, 0, 0.4);
-    display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
+}
+
+/* Nội dung của modal */
+.confirm-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
 }
 
 .block_dang_tin {
@@ -333,4 +342,39 @@ section .box.active {
     padding: 10px 30px;
     /* background-color: aqua; */ 
     margin-top: 30px;
+}
+
+/* Nút close */
+.close-btn {
+    position: absolute;
+    top: 4px; /* Khoảng cách từ trên xuống */
+    right: 15px; /* Khoảng cách từ phải sang */
+    font-size: 30px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm hơn để nổi bật */
+    cursor: pointer; /* Đổi con trỏ chuột khi hover */
+    color: #333; /* Màu chữ */
+}
+
+.close-btn:hover {
+    color: red; /* Đổi màu nút khi hover */
+}
+
+/* Nút trong phần xác nhận */
+.confirm-content button {
+    margin: 10px;
+    padding: 10px 0;
+    width: 70px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#confirmYes {
+    background-color: red;
+    color: white;
+}
+
+#confirmNo {
+    background-color: green;
+    color: white;
 }

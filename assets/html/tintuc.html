@@ -146,8 +146,8 @@
                     <a href="./diemchuan.html">Điểm chuẩn</a>
                  
                     <ul class="menu_1">
-                        <li><a href="">Điểm chuẩn các năm</a></li>
-                        <li><a href="">Thống kê điểm</a></li>
+                        <li><a href="./diemchuan.html">Điểm chuẩn năm 2024</a></li>
+                        <li><a href="https://vtcnews.vn/diem-chuan-truong-dai-hoc-su-pham-ha-noi-3-nam-gan-nhat-ar867273.html">Thống kê điểm</a></li>
                     </ul>
                 </li>
                 <li>
@@ -157,12 +157,20 @@
                             <a href="">
                                 Xét tuyển
                             </a>
-                            <i class="fa-solid fa-chevron-right arrow"></i>
+                          
                         </li>
                       
                     </ul>
                 </li>
-                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a></li>
+                <li><a href="./quanlihoso.html">Quản lí hồ sơ</a>
+                    <ul class="menu_1">
+                        <li class="menu_1-list">
+                            <a href="./quanlihoso.html">
+                                Quản lý hồ sơ 
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
          </div>
     </header>
@@ -208,7 +216,7 @@
                 <div class="box_title box_submit">
                     <h2>Tin tuyển sinh</h2>
                     <!-- Xử lí nút  nhấn đăng tin -->
-                    <a href=""><button type="button">Đăng tin</button></a>
+                    <button id="button">Đăng tin</button>
                     <style>
                         .box_submit {
                             display: flex;
@@ -222,7 +230,8 @@
                         }
 
                         .box_submit button {
-                            padding: 5px 30px;
+                            padding: 5px 25px;
+                            margin: 10px 0;
                         }
                     </style>
                 </div>
@@ -575,9 +584,10 @@
 
     </footer>
 
-    <div class="background_dang_tin">
+    <div id="modal" class="background_dang_tin">
         <div class="block_dang_tin">
             <h2>Đăng Tin Tuyển Sinh</h2>
+            <span id="closeModalBtn" class="close-btn">&times;</span>
             <div id="adminSection" style="display: none;"> <!-- style="display: none;" -->
                 <!-- <h2>Đăng Tin Tuyển Sinh</h2> -->
                 <form id="postForm">
@@ -600,13 +610,23 @@
                         </div>
                     </div>
                     <div class="btn">
-                        <button type="submit" class="submit_btn">Đăng bài</button>
+                        <button type="submit" class="submit_btn" id="submit_btn">Đăng bài</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Phần xác nhận -->
+    <div id="confirmCancel" class="confirm-modal">
+        <div class="confirm-content">
+            <p>Bạn có chắc chắn muốn hủy thao tác đăng tin không?</p>
+            <button id="confirmYes">Có</button>
+            <button id="confirmNo">Không</button>
+        </div>
+    </div>
+
+    <!-- <script src="/assets/javascript/tintuc.js"></script> -->
     <script src="/assets/javascript/test.js"></script>
 </body>
 </html>

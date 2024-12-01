@@ -16,7 +16,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: aqua;
+
         }
 
         .khoi1 {
@@ -67,6 +67,7 @@
                     <th>Điểm lớp 11</th>
                     <th>Điểm lớp 12</th>
                     <th>Trạng thái</th>
+                    <th>Thời gian cập nhật</th>
                     <th>Cập nhật</th>
                 </tr>
             </thead>
@@ -88,7 +89,8 @@
                     <th>Điểm lớp 10</th>
                     <th>Điểm lớp 11</th>
                     <th>Điểm lớp 12</th>
-                    
+                    <th>Thời gian cập nhật</th>
+
                 </tr>
             </thead>
             <tbody id="tableBody"></tbody>
@@ -101,34 +103,14 @@
         const students = JSON.parse(localStorage.getItem("students")) || [];
         const tableBody = document.getElementById("tableBody");
         const pendingBody = document.getElementById("pendingBody");
+        // Khi tạo hoặc cập nhật sinh viên, thêm timestamp
+        m
 
-        // Hiển thị danh sách đang chờ duyệt
-        // function displayPendingStudents() {
-        //     pendingBody.innerHTML = ""; // Xóa nội dung cũ
-        //     students.forEach((student, index) => {
-        //         if (student.status === "pending") {
-        //             const row = document.createElement("tr");
-        //             row.innerHTML = `
-        //                 <td>${index + 1}</td>
-        //                 <td>${student.hoTen}</td>
-        //                 <td>${student.email}</td>
-        //                 <td>${student.sdt}</td>
-        //                 <td>${student.cccd}</td>
-        //                 <td>${student.ngaySinh}</td>
-        //                 <td>${student.gioiTinh}</td>
-        //                 <td>${student.diem10}</td>
-        //                 <td>${student.diem11}</td>
-        //                 <td>${student.diem12}</td>
-        //                 <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td>
-        //                 <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
-        //             `;
-        //             pendingBody.appendChild(row);
-        //         }
-        //     });
-        // }
+
         // Hiển thị danh sách đang chờ duyệt
         function displayPendingStudents() {
             pendingBody.innerHTML = ""; // Xóa nội dung cũ
+            
             students.forEach((student, index) => {
                 if (student.status === "pending" || student.status === "yeucau") {
                     const row = document.createElement("tr");
@@ -144,6 +126,7 @@
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
                         <td>${student.status === "yeucau" ? "Yêu cầu chỉnh sửa lại" : "Đang chờ xét duyệt"}</td> 
+                        <td>${student.timestamp || "N/A"}</td> <!-- Thêm thời gian -->
                         <td><button onclick="updateStudent(${index})">Cập nhật</button></td>
                     `;
 
@@ -176,6 +159,7 @@
                         <td>${student.diem10}</td>
                         <td>${student.diem11}</td>
                         <td>${student.diem12}</td>
+                        <td>${student.timestamp || "N/A"}</td> <!-- Thêm thời gian -->
                        
                     `;
                     tableBody.appendChild(row);
@@ -185,7 +169,7 @@
 
         // Update thông tin sinh viên 
         function updateStudent(index) {
-            students.splice(index, 1); // Xóa sinh viên khỏi mảng
+            students.splice(index, 1); // thêm 1 sinh viên 
             localStorage.setItem("students", JSON.stringify(students)); // Cập nhật localStorage
             displayAcceptedStudents(); // Hiển thị lại danh sách
             alert("Đã xóa thông tin sinh viên, Yêu cầu đăng kí lại");
