@@ -161,8 +161,8 @@ header {
 /* Tạo hiệu ứng ở thanh bên dưới khi di chuột vào */
 #header_nav li a {
     position: relative;
-    text-decoration: none;
-}
+    text-decoration: none;  
+} 
 
 .menu_1 li a::after{
     content: '';
